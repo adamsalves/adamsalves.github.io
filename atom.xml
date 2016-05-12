@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://adamsalves.github.io/"/>
-  <updated>2016-05-11T18:49:33.325Z</updated>
+  <updated>2016-05-12T02:59:55.066Z</updated>
   <id>http://adamsalves.github.io/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="http://adamsalves.github.io/2016/05/10/Como-habilitar-o-tab-autocomplete-para-JSX-com-Emmet-no-Atom/"/>
     <id>http://adamsalves.github.io/2016/05/10/Como-habilitar-o-tab-autocomplete-para-JSX-com-Emmet-no-Atom/</id>
     <published>2016-05-10T19:00:07.000Z</published>
-    <updated>2016-05-11T18:49:33.325Z</updated>
+    <updated>2016-05-12T02:59:55.066Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/atomemmet.jpg&quot; alt=&quot;atom_emmet&quot;&gt;&lt;br&gt;Todos nós programadores, preocupados com agilidade, temos, em nossos editores de texto/código, uma série de &lt;em&gt;snippets&lt;/em&gt;, &lt;em&gt;plugins&lt;/em&gt; ou &lt;em&gt;packages&lt;/em&gt; que que nos auxiliam na codificação e facilitam nosso dia a dia. Um exemplo disso é o &lt;a href=&quot;http://emmet.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Emmet&lt;/a&gt;.&lt;a id=&quot;more&quot;&gt;&lt;/a&gt; Se você não conhece essa ferramenta, dá uma conferida nesse &lt;a href=&quot;http://tableless.com.br/bye-zen-coding-bem-vindo-emmet/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;artigo&lt;/a&gt; que vai te dar um panorama da utilidade do &lt;em&gt;&lt;strong&gt;Emmet&lt;/strong&gt;&lt;/em&gt;. A questão é que ele melhora e muito o fluxo de trabalho de quem está escrevendo &lt;em&gt;html&lt;/em&gt; ou &lt;em&gt;css&lt;/em&gt;.&lt;br&gt;Dá uma olhada nesse exemplo simples de como ele funciona.&lt;br&gt;&lt;img src=&quot;/images/atom-emmet.gif&quot; alt=&quot;emmet&quot;&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/atomemmet.jpg&quot; alt=&quot;atom_emmet&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Todos nós programadores, preocupados com agilidade, temos, em nossos editores de texto/código, uma série de &lt;em&gt;snippets&lt;/em&gt;, &lt;em&gt;plugins&lt;/em&gt; ou &lt;em&gt;packages&lt;/em&gt; que que nos auxiliam na codificação e facilitam nosso dia a dia. Um exemplo disso é o &lt;a href=&quot;http://emmet.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Emmet&lt;/a&gt;.&lt;a id=&quot;more&quot;&gt;&lt;/a&gt; Se você não conhece essa ferramenta, dá uma conferida nesse &lt;a href=&quot;http://tableless.com.br/bye-zen-coding-bem-vindo-emmet/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;artigo&lt;/a&gt; que vai te dar um panorama da utilidade do &lt;em&gt;&lt;strong&gt;Emmet&lt;/strong&gt;&lt;/em&gt;. A questão é que ele melhora e muito o fluxo de trabalho de quem está escrevendo &lt;em&gt;html&lt;/em&gt; ou &lt;em&gt;css&lt;/em&gt;.&lt;br&gt;Dá uma olhada nesse exemplo simples de como ele funciona.&lt;br&gt;&lt;img src=&quot;/images/atom-emmet.gif&quot; alt=&quot;emmet&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;Tab-do-Emmet-com-JSX&quot;&gt;&lt;a href=&quot;#Tab-do-Emmet-com-JSX&quot; class=&quot;headerlink&quot; title=&quot;Tab do Emmet com JSX&quot;&gt;&lt;/a&gt;Tab do Emmet com JSX&lt;/h3&gt;&lt;p&gt;Tá mais e aí? O &lt;em&gt;Emmet&lt;/em&gt; é uma mão na roda. Já sabemos.&lt;br&gt;O que acontece é que, codando em JSX para construir componentes &lt;a href=&quot;https://facebook.github.io/react/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React&lt;/a&gt;, por exemplo, o costumeiro &lt;em&gt;tab&lt;/em&gt; do &lt;em&gt;Emmet&lt;/em&gt; não funciona! Vocês certamente já se depararam com essa situação. E é muito frustante não ter aquela agilidade de antes, já que no &lt;em&gt;JSX&lt;/em&gt; também escrevemos &lt;em&gt;tags&lt;/em&gt; &lt;em&gt;html&lt;/em&gt; e temos que fazer isso &lt;em&gt;na unha&lt;/em&gt;.&lt;br&gt;E é aí que vem uma dica sensacional para nós desenvolvedores. Conseguimos habilitar o mesmo comportamento do &lt;em&gt;html&lt;/em&gt; normal para &lt;em&gt;JSX&lt;/em&gt;.&lt;br&gt;Para conseguimos isso, já temos que ter instalados os seguintes &lt;em&gt;packages&lt;/em&gt;: &lt;code&gt;emmet&lt;/code&gt; e o &lt;code&gt;language-babel&lt;/code&gt;&lt;br&gt;Após verificar esses requisitos é só seguir os seguintes passos:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Abrir o arquivo &lt;code&gt;keymap.cson&lt;/code&gt; clicando em &lt;code&gt;edit -&amp;gt; Keymap…&lt;/code&gt; no menu&lt;/li&gt;
@@ -51,7 +52,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;/images/atomemmet.jpg&quot; alt=&quot;atom_emmet&quot;&gt;&lt;br&gt;Todos nós programadores, preocupados com agilidade, temos, em nossos editores de texto/código, uma série de &lt;em&gt;snippets&lt;/em&gt;, &lt;em&gt;plugins&lt;/em&gt; ou &lt;em&gt;packages&lt;/em&gt; que que nos auxiliam na codificação e facilitam nosso dia a dia. Um exemplo disso é o &lt;a href=&quot;http://emmet.io/&quot;&gt;Emmet&lt;/a&gt;.
+      &lt;p&gt;&lt;img src=&quot;/images/atomemmet.jpg&quot; alt=&quot;atom_emmet&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Todos nós programadores, preocupados com agilidade, temos, em nossos editores de texto/código, uma série de &lt;em&gt;snippets&lt;/em&gt;, &lt;em&gt;plugins&lt;/em&gt; ou &lt;em&gt;packages&lt;/em&gt; que que nos auxiliam na codificação e facilitam nosso dia a dia. Um exemplo disso é o &lt;a href=&quot;http://emmet.io/&quot;&gt;Emmet&lt;/a&gt;.
     
     </summary>
     
@@ -113,11 +115,11 @@
     
       <category term="tools" scheme="http://adamsalves.github.io/tags/tools/"/>
     
-      <category term="blog" scheme="http://adamsalves.github.io/tags/blog/"/>
-    
       <category term="deploy" scheme="http://adamsalves.github.io/tags/deploy/"/>
     
       <category term="gulp" scheme="http://adamsalves.github.io/tags/gulp/"/>
+    
+      <category term="blog" scheme="http://adamsalves.github.io/tags/blog/"/>
     
   </entry>
   
@@ -247,9 +249,9 @@ Um seletor CSS para uso com document.querySelector que identifica um elemento em
     </summary>
     
     
-      <category term="web" scheme="http://adamsalves.github.io/tags/web/"/>
-    
       <category term="blog" scheme="http://adamsalves.github.io/tags/blog/"/>
+    
+      <category term="web" scheme="http://adamsalves.github.io/tags/web/"/>
     
       <category term="soudev" scheme="http://adamsalves.github.io/tags/soudev/"/>
     
