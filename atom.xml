@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Adams Alves</title>
+  <subtitle>Web Development, Front-End, Javascript and Open Web</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2016-05-11T18:49:33.325Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Adams Alves</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Como habilitar o &quot;tab autocomplete&quot; para JSX com Emmet no Atom</title>
+    <link href="http://yoursite.com/2016/05/10/Como-habilitar-o-tab-autocomplete-para-JSX-com-Emmet-no-Atom/"/>
+    <id>http://yoursite.com/2016/05/10/Como-habilitar-o-tab-autocomplete-para-JSX-com-Emmet-no-Atom/</id>
+    <published>2016-05-10T19:00:07.000Z</published>
+    <updated>2016-05-11T18:49:33.325Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/atomemmet.jpg&quot; alt=&quot;atom_emmet&quot;&gt;&lt;br&gt;Todos nós programadores, preocupados com agilidade, temos, em nossos editores de texto/código, uma série de &lt;em&gt;snippets&lt;/em&gt;, &lt;em&gt;plugins&lt;/em&gt; ou &lt;em&gt;packages&lt;/em&gt; que que nos auxiliam na codificação e facilitam nosso dia a dia. Um exemplo disso é o &lt;a href=&quot;http://emmet.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Emmet&lt;/a&gt;.&lt;a id=&quot;more&quot;&gt;&lt;/a&gt; Se você não conhece essa ferramenta, dá uma conferida nesse &lt;a href=&quot;http://tableless.com.br/bye-zen-coding-bem-vindo-emmet/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;artigo&lt;/a&gt; que vai te dar um panorama da utilidade do &lt;em&gt;&lt;strong&gt;Emmet&lt;/strong&gt;&lt;/em&gt;. A questão é que ele melhora e muito o fluxo de trabalho de quem está escrevendo &lt;em&gt;html&lt;/em&gt; ou &lt;em&gt;css&lt;/em&gt;.&lt;br&gt;Dá uma olhada nesse exemplo simples de como ele funciona.&lt;br&gt;&lt;img src=&quot;/images/atom-emmet.gif&quot; alt=&quot;emmet&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Tab-do-Emmet-com-JSX&quot;&gt;&lt;a href=&quot;#Tab-do-Emmet-com-JSX&quot; class=&quot;headerlink&quot; title=&quot;Tab do Emmet com JSX&quot;&gt;&lt;/a&gt;Tab do Emmet com JSX&lt;/h3&gt;&lt;p&gt;Tá mais e aí? O &lt;em&gt;Emmet&lt;/em&gt; é uma mão na roda. Já sabemos.&lt;br&gt;O que acontece é que, codando em JSX para construir componentes &lt;a href=&quot;https://facebook.github.io/react/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React&lt;/a&gt;, por exemplo, o costumeiro &lt;em&gt;tab&lt;/em&gt; do &lt;em&gt;Emmet&lt;/em&gt; não funciona! Vocês certamente já se depararam com essa situação. E é muito frustante não ter aquela agilidade de antes, já que no &lt;em&gt;JSX&lt;/em&gt; também escrevemos &lt;em&gt;tags&lt;/em&gt; &lt;em&gt;html&lt;/em&gt; e temos que fazer isso &lt;em&gt;na unha&lt;/em&gt;.&lt;br&gt;E é aí que vem uma dica sensacional para nós desenvolvedores. Conseguimos habilitar o mesmo comportamento do &lt;em&gt;html&lt;/em&gt; normal para &lt;em&gt;JSX&lt;/em&gt;.&lt;br&gt;Para conseguimos isso, já temos que ter instalados os seguintes &lt;em&gt;packages&lt;/em&gt;: &lt;code&gt;emmet&lt;/code&gt; e o &lt;code&gt;language-babel&lt;/code&gt;&lt;br&gt;Após verificar esses requisitos é só seguir os seguintes passos:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Abrir o arquivo &lt;code&gt;keymap.cson&lt;/code&gt; clicando em &lt;code&gt;edit -&amp;gt; Keymap…&lt;/code&gt; no menu&lt;/li&gt;
+&lt;li&gt;Adicionar este código ao &lt;code&gt;keymap&lt;/code&gt;:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;&#39;atom-text-editor[data-grammar~=&quot;jsx&quot;]:not([mini])&#39;&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;string&quot;&gt;&#39;tab&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;emmet:expand-abbreviation-with-tab&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;E aí está!&lt;br&gt;&lt;img src=&quot;/images/emmet-jsx.gif&quot; alt=&quot;Emmet-JSX&quot;&gt;&lt;br&gt;Se caso você use &lt;em&gt;&lt;strong&gt;aspas simples&lt;/strong&gt;&lt;/em&gt; para escrever os atributos, temos uma &lt;em&gt;config&lt;/em&gt; para isso também!&lt;br&gt;É só criar o arquivo &lt;code&gt;syntaxProfiles.json&lt;/code&gt; na pasta &lt;code&gt;~/emmet&lt;/code&gt; e usar o seguinte código:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;json&quot;&gt;{
+  &lt;span class=&quot;attr&quot;&gt;&quot;html&quot;&lt;/span&gt;: {
+    &lt;span class=&quot;attr&quot;&gt;&quot;tag_case&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;lower&quot;&lt;/span&gt;,
+    &lt;span class=&quot;attr&quot;&gt;&quot;attr_quotes&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;single&quot;&lt;/span&gt;,
+    &lt;span class=&quot;attr&quot;&gt;&quot;self_closing_tag&quot;&lt;/span&gt;: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;
+  },
+  &lt;span class=&quot;attr&quot;&gt;&quot;jsx&quot;&lt;/span&gt;: {
+    &lt;span class=&quot;attr&quot;&gt;&quot;tag_case&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;lower&quot;&lt;/span&gt;,
+    &lt;span class=&quot;attr&quot;&gt;&quot;attr_quotes&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;single&quot;&lt;/span&gt;,
+    &lt;span class=&quot;attr&quot;&gt;&quot;self_closing_tag&quot;&lt;/span&gt;: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;É isso, espero que ajude no desenvolvimento de vocês.&lt;br&gt;Um abraço.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;PS: Esse post foi escrito com base nesse &lt;a href=&quot;https://gist.github.com/mxstbr/361ddb22057f0a01762240be209321f0&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Gist&lt;/a&gt; (em Inglês)&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/atomemmet.jpg&quot; alt=&quot;atom_emmet&quot;&gt;&lt;br&gt;Todos nós programadores, preocupados com agilidade, temos, em nossos editores de texto/código, uma série de &lt;em&gt;snippets&lt;/em&gt;, &lt;em&gt;plugins&lt;/em&gt; ou &lt;em&gt;packages&lt;/em&gt; que que nos auxiliam na codificação e facilitam nosso dia a dia. Um exemplo disso é o &lt;a href=&quot;http://emmet.io/&quot;&gt;Emmet&lt;/a&gt;.
+    
+    </summary>
+    
+    
+      <category term="Atom" scheme="http://yoursite.com/tags/Atom/"/>
+    
+      <category term="Emmet" scheme="http://yoursite.com/tags/Emmet/"/>
+    
+      <category term="JSX" scheme="http://yoursite.com/tags/JSX/"/>
+    
+      <category term="React" scheme="http://yoursite.com/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Fazendo deploy no Github Pages com Gulp</title>
+    <link href="http://yoursite.com/2016/03/29/Fazendo-deploy-no-Github-Pages-com-Gulp/"/>
+    <id>http://yoursite.com/2016/03/29/Fazendo-deploy-no-Github-Pages-com-Gulp/</id>
+    <published>2016-03-29T22:53:45.000Z</published>
+    <updated>2016-04-09T19:19:48.526Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/gulp.jpg&quot; alt=&quot;gulp&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Recentemente mudei a plataforma que usava para publicar os &lt;strong&gt;posts&lt;/strong&gt; do blog. Começei a publicar usando o &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;, que é uma ferramenta incrível&lt;br&gt;para gerar arquivos estáticos para o seu blog ou para a página do seu projeto&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;, como bem descrito nesse &lt;a href=&quot;http://blog.da2k.com.br/2014/01/05/hexo-criando-um-blog-ao-estilo-miojo/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;post&lt;/a&gt; do &lt;a href=&quot;http://da2k.com.br/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Fernando Daciuk&lt;/a&gt;.&lt;br&gt;Porém, no meio do caminho, conheci o &lt;a href=&quot;http://harmonicjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Harmonic&lt;/a&gt; que é um projeto feito por desenvolvedores da comunidade &lt;strong&gt;JS&lt;/strong&gt; brasileira e que está sendo escrito, já com as mais novas implementações da &lt;strong&gt;Javascript(ES2015/ES6 - ES2016/ES7)&lt;/strong&gt;. Isso me chamou a atenção. Vi a oportunidade de, além de publicar, aprender mais sobre o desenvolvimento de uma ferramenta dessas e também possibilidade de construir temas para o &lt;strong&gt;Harmonic&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Pois bem, eis que surgem as demandas.&lt;/p&gt;
+&lt;p&gt;Começei a construir meu próprio tema, o &lt;a href=&quot;https://github.com/adamsalves/harmonic-theme-profile&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;harmonic-theme-profile&lt;/a&gt;, e aprendi muito com essa iniciativa. Mas surgiram alguns contratempos referentes ao &lt;em&gt;workflow&lt;/em&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;O-“Problema”&quot;&gt;&lt;a href=&quot;#O-“Problema”&quot; class=&quot;headerlink&quot; title=&quot;O “Problema”&quot;&gt;&lt;/a&gt;O “Problema”&lt;/h2&gt;&lt;p&gt;No &lt;em&gt;Harmonic&lt;/em&gt; não temos a opção de fazer o deploy diretamente do &lt;code&gt;CLI&lt;/code&gt; como encontramos no &lt;em&gt;Hexo&lt;/em&gt;. Mas isso não é um impedimento, muito pelo contrário. É um estímulo para contribuir com o projeto. Não acham? (Veja &lt;a href=&quot;https://github.com/JSRocksHQ/harmonic/blob/master/CONTRIBUTING.md&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;aqui&lt;/a&gt; como contribuir)&lt;/p&gt;
+&lt;h2 id=&quot;A-Resolucao&quot;&gt;&lt;a href=&quot;#A-Resolucao&quot; class=&quot;headerlink&quot; title=&quot;A Resolução&quot;&gt;&lt;/a&gt;A Resolução&lt;/h2&gt;&lt;p&gt;Enquanto não temos essa &lt;em&gt;feature&lt;/em&gt; no &lt;em&gt;CLI&lt;/em&gt; do Harmonic, podemos contornar esse nosso “problema” com uma ferramenta muito útil para o &lt;em&gt;front-end&lt;/em&gt;.&lt;br&gt;E é aqui que entra o &lt;a href=&quot;http://gulpjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Gulp&lt;/a&gt;. Um automatizador de tarefas para &lt;em&gt;front-end&lt;/em&gt; que da conta de várias tarefas repetitivas no &lt;em&gt;workflow&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Nesse caso, ele vai nos ajudar a fazer o &lt;em&gt;deploy&lt;/em&gt; dos estáticos do blog para o &lt;a href=&quot;https://pages.github.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github Pages&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Temos que seguir alguns passos antes de ter condições para fazer o &lt;em&gt;deploy&lt;/em&gt;, vamos lá?&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Instalar o &lt;em&gt;Gulp&lt;/em&gt; globalmente com o camando: &lt;code&gt;npm install --global gulp&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Instalar o &lt;em&gt;Gulp&lt;/em&gt; como &lt;em&gt;devDependencies&lt;/em&gt; do seu projeto: &lt;code&gt;npm install --save-dev gulp&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Instalar o &lt;em&gt;gulp-gh-pages&lt;/em&gt; que é o &lt;code&gt;plugin&lt;/code&gt; que fará o deploy: &lt;code&gt;npm install --save-dev gulp-gh-pages&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Criar na raiz do seu projeto um &lt;em&gt;gulpfile.js&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Depois de seguir esses passos, já temos condições de criar a &lt;em&gt;task&lt;/em&gt; que irá realizar o deploy.&lt;/p&gt;
+&lt;p&gt;Nosso &lt;code&gt;Gulpfile&lt;/code&gt; parcial ficará assim então:&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; gulp = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;gulp&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; ghPages = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;gulp-gh-pages&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;gulp.task(&lt;span class=&quot;string&quot;&gt;&#39;deploy&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; gulp.src(&lt;span class=&quot;string&quot;&gt;&#39;./dist/**/*&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    .pipe(ghPages());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Depois de fazer os &lt;code&gt;requires&lt;/code&gt; do &lt;code&gt;gulp&lt;/code&gt; e do &lt;code&gt;gulp-gh-pages&lt;/code&gt;, começamos a escrever a &lt;em&gt;task&lt;/em&gt;. Como primeiro parâmetro passamos o nome da &lt;em&gt;task&lt;/em&gt;, &lt;code&gt;deploy&lt;/code&gt;, e como segundo, uma função anônima. Nela está descrito o diretório onde queremos que os arquivos sejam pegos, no caso &lt;code&gt;./dist/**/*&lt;/code&gt;. Este comando irá, recursivamente, pegar todas as pastas e arquivos, para depois, com a função &lt;code&gt;ghPages()&lt;/code&gt; realizar o deploy de fato.&lt;/p&gt;
+&lt;p&gt;Aqui temos algumas opções. Vamos inserir um objeto na função &lt;code&gt;ghPages()&lt;/code&gt; com duas propriedades, &lt;code&gt;remoteUrl&lt;/code&gt; e &lt;code&gt;branch&lt;/code&gt;. A primeira irá dizer ao &lt;code&gt;plugin&lt;/code&gt; para qual repositório queremos enviar os arquivos selecionados e a segunda escolheremos qual &lt;code&gt;branch&lt;/code&gt; queremos que ele ocupe no &lt;code&gt;github&lt;/code&gt;, no caso, a &lt;code&gt;master&lt;/code&gt;. Mas você pode conferir mais opções para o &lt;em&gt;deploy&lt;/em&gt; na página do  &lt;a href=&quot;https://github.com/shinnn/gulp-gh-pages&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;projeto gulp-gh-pages&lt;/a&gt; no Github.&lt;/p&gt;
+&lt;p&gt;Bem, o resultado final do nosso &lt;code&gt;gulpfile&lt;/code&gt; até aqui é o seguinte:&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; gulp = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;gulp&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; ghPages = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;gulp-gh-pages&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;gulp.task(&lt;span class=&quot;string&quot;&gt;&#39;deploy&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; gulp.src(&lt;span class=&quot;string&quot;&gt;&#39;./dist/**/*&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    .pipe(ghPages(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      remoteUrl: &lt;span class=&quot;string&quot;&gt;&#39;https://github.com/youruser/youruser.github.io.git&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      branch: &lt;span class=&quot;string&quot;&gt;&#39;master&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Com tudo &lt;em&gt;ok&lt;/em&gt;, é só irmos para o terminal, rodar a &lt;em&gt;task&lt;/em&gt; assim: &lt;code&gt;gulp deploy&lt;/code&gt;, nós autenticarmos no github e pronto. Nossos arquivos estáticos estarão atualizados no &lt;em&gt;Github Pages&lt;/em&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Conclusao&quot;&gt;&lt;a href=&quot;#Conclusao&quot; class=&quot;headerlink&quot; title=&quot;Conclusão&quot;&gt;&lt;/a&gt;Conclusão&lt;/h2&gt;&lt;p&gt;Vimos como é simples usar o &lt;em&gt;Gulp&lt;/em&gt; para fazer &lt;code&gt;deploy&lt;/code&gt; no &lt;code&gt;Github Pages&lt;/code&gt;. Suas funcionalidades para o &lt;code&gt;front-end&lt;/code&gt; são inúmeras e não param de crescer. Recomendo fortemente que você separe um tempo para conhecer mais a fundo o &lt;strong&gt;Gulp&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;É isso. Espero que com esse passo a passo, consigamos resolver esse “problema” do &lt;code&gt;deploy&lt;/code&gt; no &lt;code&gt;Harmonic&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Um abraço e até a próxima.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/gulp.jpg&quot; alt=&quot;gulp&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Recentemente mudei a plataforma que usava para publicar os &lt;strong&gt;posts&lt;/strong&gt; do blog. Começei a publicar usando o &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;, que é uma ferramenta incrível&lt;br&gt;para gerar arquivos estáticos para o seu blog ou para a página do seu projeto
+    
+    </summary>
+    
+    
+      <category term="tools" scheme="http://yoursite.com/tags/tools/"/>
+    
+      <category term="deploy" scheme="http://yoursite.com/tags/deploy/"/>
+    
+      <category term="gulp" scheme="http://yoursite.com/tags/gulp/"/>
+    
+      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Conheçendo a Developer Toolbar(Barra do desenvolvedor) do Firefox</title>
+    <link href="http://yoursite.com/2015/04/05/Conhecendo-a-Developer-Tollbar-Barra-do-desenvolvedor-do-Firefox/"/>
+    <id>http://yoursite.com/2015/04/05/Conhecendo-a-Developer-Tollbar-Barra-do-desenvolvedor-do-Firefox/</id>
+    <published>2015-04-06T01:15:48.000Z</published>
+    <updated>2016-04-09T19:17:31.126Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/mozillafire.png&quot; alt=&quot;mozilla&quot;&gt;&lt;br&gt;Muitas vezes necessitamos realizar ações ou executar tarefas em nossos web browser e acabamos usando complementos ou extensões que, apesar de resolverem as coisas de uma maneira objetiva, oneram a memória de nossas máquinas, já que precisam ser instaladas nos &lt;em&gt;browsers&lt;/em&gt;.&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Vamos pensar.&lt;/p&gt;
+&lt;p&gt;Temos a comodidade de instalar algo que vai realizar a tarefa que precisamos automaticamente. Isso é bom, porém, temos outros caminhos para conseguir esses resultados.  &lt;/p&gt;
+&lt;p&gt;É o que vai ser tratado aqui nesse artigo: &lt;strong&gt;Como utilizar recursos de nossos navegadores sem ter que instalar complementos&lt;/strong&gt;, e, de quebra, livrar nosso browser de consumir mais memória.&lt;/p&gt;
+&lt;p&gt;Em se tratando de navegadores modernos, temos uma gama de &lt;em&gt;complementos&lt;/em&gt;(&lt;em&gt;addons&lt;/em&gt;) que possívelmente vão nos atender satisfatoriamente. E eles realmente dão conta de várias dessas necessidades e são realmente úteis. Muitos deles são extensões à serviços incríveis como o &lt;a href=&quot;https://getpocket.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;em&gt;Pocket&lt;/em&gt;&lt;/a&gt; por exemplo!&lt;/p&gt;
+&lt;p&gt;Porém, muitas &lt;em&gt;features&lt;/em&gt; que são tranformadas em &lt;a href=&quot;https://addons.mozilla.org/pt-BR/firefox/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;addons&lt;/strong&gt;&lt;/a&gt;, podemos conseguir usando &lt;strong&gt;recursos nativos&lt;/strong&gt; do próprio navegador, sem que precisemos instalar qualquer coisa.&lt;/p&gt;
+&lt;p&gt;É aí que entra a &lt;strong&gt;Barra do Desenvolvedor&lt;/strong&gt;(&lt;em&gt;Developer tollbar&lt;/em&gt;) do &lt;strong&gt;Firefox&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Leia a descrição do próprio site da &lt;a href=&quot;https://developer.mozilla.org/pt-BR/docs/Tools/GCLI&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;em&gt;Developer Tollbar&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;The Developer Toolbar gives you command-line access to a number of developer tools from within Firefox. The Developer Toolbar is a &lt;a href=&quot;https://github.com/joewalker/gcli/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Graphical Command Line Interpreter&lt;/a&gt;: it has the power and conciseness of a command line, but provides integrated help for its commands and can display rich output. It’s also extensible: you can add your own local commands and even convert them to add-ons so other people can install them too.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Vamos então listar aqui alguns comandos que podem nos trazer resultados interessantes através do &lt;em&gt;command line&lt;/em&gt; da &lt;em&gt;barra do desenvolvedor&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Primeiro vamos abrí-la:&lt;br&gt;Vá em Ferramentas &amp;gt; Desenvolvedor Web &amp;gt; Barra do desenvolvedor ou tecle &lt;code&gt;shift+F2&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Digite &lt;code&gt;help&lt;/code&gt;, dê &lt;em&gt;enter&lt;/em&gt; e serão listados os comando que temos à disposição no &lt;strong&gt;GCLI&lt;/strong&gt;(Graphical Command Line Interpreter).&lt;br&gt;Ao digitarmos &lt;code&gt;help&lt;/code&gt; teremos &lt;code&gt;[search]&lt;/code&gt; como um parâmetro de busca. Podemos buscar algum comando já de cara, se quisermos. Mas vamos comentar alguns…&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comandos:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;console&lt;/code&gt; Comandos para controlar o console. Dê &lt;em&gt;enter&lt;/em&gt; e verá as opções para este comando. (&lt;code&gt;clear&lt;/code&gt;, &lt;code&gt;close&lt;/code&gt;, &lt;code&gt;open&lt;/code&gt;).&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;code&gt;export&lt;/code&gt; Exporta o html da página&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;code&gt;eyedropper&lt;/code&gt; Abre um painel que amplia uma área da página para inspecionar pixels e copiar valores de cores&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;code&gt;folder&lt;/code&gt; Abre pastas, aceita como parâmetro um caminho para alguma pasta ex: folder open [path]&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;code&gt;highlight&lt;/code&gt; Realça nós.&lt;br&gt;Parâmentros [–hideguides] [–showinfobar] [–showall] [–region …] [–fill …] [–keep]&lt;/p&gt;
+&lt;p&gt;Realça os nós que correspondem a um seletor na página&lt;/p&gt;
+&lt;p&gt;Opções:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;selector&amp;gt; (nodelist, obrigatório)
+Seletor CSS usado para selecionar nós na página
+[--hideguides] (boolean, obrigatório) Oculta guias ao redor do nó realçado
+[--showinfobar] (boolean, obrigatório) Exibe a barra de propriedades acima do nó realçado (a barra exibe o nome da tag, atributos e dimensões)
+[--showall] (boolean, obrigatório) Se houver muitos nós que correspondam ao seletor, apenas as primeiras 100 ocorrências serão mostradas para evitar que a página fique muito lenta. Use esta opção para exibir todas as correspondências
+[--region ...] (selection, helpManOptional) Que região da caixa deve ser realçada: “content”, “padding”, “border” ou “margin”
+[--fill ...] (string, helpManOptional) Substitui o estilo de preenchimento de região padrão por uma cor personalizada
+[--keep] (boolean, obrigatório) Por padrão, realçamentos existentes são ocultos ao executar o comando, a menos que esta opção esteja definida
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;p&gt;&lt;code&gt;inspect&lt;/code&gt; Inspeciona um nó&lt;/p&gt;
+&lt;p&gt;Examina as dimensões e propriedades de um elemento usando um seletor CSS para abrir a inspeção do DOM&lt;/p&gt;
+&lt;p&gt;Opções:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;selector&amp;gt; (node, obrigatório)
+Um seletor CSS para uso com document.querySelector que identifica um elemento em particular
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;p&gt;&lt;code&gt;pagemod&lt;/code&gt; Efetua alterações na página&lt;/p&gt;
+&lt;p&gt;Subcomandos:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pagemod remove: Exclui elementos e atributos da página help pagemod remove
+pagemod remove attribute: Exclui os atributos encontrados help pagemod remove attribute
+pagemod remove element: Exclui elementos da página help pagemod remove element
+pagemod replace: Localiza e substitui em elementos da página help pagemod replace
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;p&gt;&lt;code&gt;paintflashing&lt;/code&gt; Realça regiões atualizadas&lt;/p&gt;
+&lt;p&gt;Subcomandos:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;paintflashing off: Desativa o realce de regiões atualizadas help paintflashing off
+paintflashing on: Ativa o realce de regiões atualizadas help paintflashing on
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;p&gt;&lt;code&gt;resize&lt;/code&gt; Controla o modo de design adaptável&lt;/p&gt;
+&lt;p&gt;Subcomandos:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;resize off: Sai do modo de design adaptável help resize off
+resize on: Entra no modo de design adaptável help resize on
+resize to: Modifica o tamanho da página help resize to
+resize toggle: Entra ou sai do modo de design adaptável help resize toggle
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;p&gt;&lt;code&gt;restart&lt;/code&gt; Reinicia o Firefox    &lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;code&gt;screenshot&lt;/code&gt; Salva uma imagem PNG de toda a janela visível (opcionalmente após um atraso)&lt;/p&gt;
+&lt;p&gt;Opções:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[filename] (string, helpManOptional)
+O nome do arquivo (deve possuir a extensão “.png”) no qual será salva a imagem da página.
+[--clipboard] (boolean, obrigatório)
+True se você deseja copiar a imagem da página em vez de salvá-la em um arquivo.
+[--chrome] (boolean, obrigatório)
+True se você deseja que a imagem seja da janela do Firefox em vez do conteúdo da página.
+[--delay ...] (number, helpManOptional)
+O tempo a aguardar (em segundos) antes que imagem da página seja efetuada
+[--fullpage] (boolean, obrigatório)
+“true” se a imagem da página deve incluir as partes fora dos limites da janela
+[--selector ...] (node, helpManOptional)
+Um seletor CSS para uso com document.querySelector que identifica um elemento em particular
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;p&gt;&lt;code&gt;unhighlight&lt;/code&gt; Desrealça todos os nós anteriormente realçados com o comando &lt;code&gt;highlight&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Essas são só algumas dicas de tarefas que podemos realizar no dia a dia. A &lt;em&gt;barra do desenvolvedor&lt;/em&gt; tem muitos outros comando que não foram explorados aqui.&lt;/p&gt;
+&lt;p&gt;Num próximo post podemos falar de mais comandos e abordar algo realmente incrível: &lt;strong&gt;como criar nossos próprios comandos&lt;/strong&gt; :D&lt;br&gt;Mas fica pra uma próxima!&lt;/p&gt;
+&lt;p&gt;Até mais!&lt;/p&gt;
+&lt;p&gt;Abraços&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/mozillafire.png&quot; alt=&quot;mozilla&quot;&gt;&lt;br&gt;Muitas vezes necessitamos realizar ações ou executar tarefas em nossos web browser e acabamos usando complementos ou extensões que, apesar de resolverem as coisas de uma maneira objetiva, oneram a memória de nossas máquinas, já que precisam ser instaladas nos &lt;em&gt;browsers&lt;/em&gt;.
+    
+    </summary>
+    
+    
+      <category term="tools" scheme="http://yoursite.com/tags/tools/"/>
+    
+      <category term="firefox" scheme="http://yoursite.com/tags/firefox/"/>
+    
+      <category term="webdevelopment" scheme="http://yoursite.com/tags/webdevelopment/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Sobre a finalidade deste blog</title>
+    <link href="http://yoursite.com/2015/02/19/Sobre-a-finalidade-deste-blog/"/>
+    <id>http://yoursite.com/2015/02/19/Sobre-a-finalidade-deste-blog/</id>
+    <published>2015-02-20T01:32:56.000Z</published>
+    <updated>2016-04-09T19:16:44.246Z</updated>
+    
+    <content type="html">&lt;p&gt;Olá pessoal!&lt;/p&gt;
+&lt;p&gt;Como esse é o primeiro post deste Blog, vou me apresentar!&lt;br&gt;Meu nome é Adams, um desenvolvedor web que iniciou a caminhada a pouco tempo, vindo de outra área que nada tem a ver, à princípio, com o mundo digital. &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;Me graduei em História,  isso mesmo, Humanas!. Porém, essa outra parte da caminhada, me trouxe uma abordagem multi-facetada, abrangente e universal de como pensar a web.&lt;/p&gt;
+&lt;p&gt;Espero, com esse blog, contribuir com artigos técnicos sobre desenvolvimento web e assuntos voltados a como pensamos e nos relacionamos com a internet.    &lt;/p&gt;
+&lt;p&gt;Um grande abraço e até breve!&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Olá pessoal!&lt;/p&gt;
+&lt;p&gt;Como esse é o primeiro post deste Blog, vou me apresentar!&lt;br&gt;Meu nome é Adams, um desenvolvedor web que iniciou a caminhada a pouco tempo, vindo de outra área que nada tem a ver, à princípio, com o mundo digital.
+    
+    </summary>
+    
+    
+      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
+    
+      <category term="web" scheme="http://yoursite.com/tags/web/"/>
+    
+      <category term="soudev" scheme="http://yoursite.com/tags/soudev/"/>
+    
+  </entry>
+  
+</feed>

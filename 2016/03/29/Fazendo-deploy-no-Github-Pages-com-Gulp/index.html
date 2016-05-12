@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <title>Fazendo deploy no Github Pages com Gulp |  Adams Alves | Web Development, Front-End, Javascript and Open Web</title>
+  <meta name="description" content="Web Development, Front-End, Javascript and Open Web">
+   <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/lib/css/bulma.css">
+  <link rel="stylesheet" href="/lib/css/font-awesome.css">
+  <link rel="stylesheet" href="/lib/css/style.css">
+</head>
+
+<body>
+  <div class="hero header-theme-flow is-primary is-medium">
+  <!-- Hero header: will stick at the top -->
+  <div class="hero-header">
+    <header class="header">
+      <div class="container">
+        <div class="header-left">
+          <a class="header-item" href="/">
+            Adams Alves
+          </a>
+        </div>
+        <span class="header-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <div class="header-right header-menu">
+            
+              <span class="header-item">
+                <a href="/">Home</a>
+              </span>
+            
+              <span class="header-item">
+                <a href="/about">About</a>
+              </span>
+            
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-content">
+    <div class="container">
+       <div class="post-header">
+  <div class="meta">
+    <time datetime="2016-03-29T22:53:45.000Z" itemprop="datePublished">
+      29-03-2016
+    </time>
+    
+      
+      | 
+      <a href='/tags/tools/'>tools</a>,
+      
+      <a href='/tags/deploy/'>deploy</a>,
+      
+      <a href='/tags/gulp/'>gulp</a>,
+      
+      <a href='/tags/blog/'>blog</a>
+      
+    
+  </div>
+    <h1 class="title">
+      Fazendo deploy no Github Pages com Gulp
+    </h1>
+    
+</div>
+
+      
+    </div>
+  </div>
+</div>
+
+  
+<main class="container main-content" role="main">
+  <article class="post">
+    <section class="post-content">
+      <p><img src="/images/gulp.jpg" alt="gulp"></p>
+<p>Recentemente mudei a plataforma que usava para publicar os <strong>posts</strong> do blog. Começei a publicar usando o <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>, que é uma ferramenta incrível<br>para gerar arquivos estáticos para o seu blog ou para a página do seu projeto<a id="more"></a>, como bem descrito nesse <a href="http://blog.da2k.com.br/2014/01/05/hexo-criando-um-blog-ao-estilo-miojo/" target="_blank" rel="external">post</a> do <a href="http://da2k.com.br/" target="_blank" rel="external">Fernando Daciuk</a>.<br>Porém, no meio do caminho, conheci o <a href="http://harmonicjs.com/" target="_blank" rel="external">Harmonic</a> que é um projeto feito por desenvolvedores da comunidade <strong>JS</strong> brasileira e que está sendo escrito, já com as mais novas implementações da <strong>Javascript(ES2015/ES6 - ES2016/ES7)</strong>. Isso me chamou a atenção. Vi a oportunidade de, além de publicar, aprender mais sobre o desenvolvimento de uma ferramenta dessas e também possibilidade de construir temas para o <strong>Harmonic</strong>.</p>
+<p>Pois bem, eis que surgem as demandas.</p>
+<p>Começei a construir meu próprio tema, o <a href="https://github.com/adamsalves/harmonic-theme-profile" target="_blank" rel="external">harmonic-theme-profile</a>, e aprendi muito com essa iniciativa. Mas surgiram alguns contratempos referentes ao <em>workflow</em>.</p>
+<h2 id="O-“Problema”"><a href="#O-“Problema”" class="headerlink" title="O “Problema”"></a>O “Problema”</h2><p>No <em>Harmonic</em> não temos a opção de fazer o deploy diretamente do <code>CLI</code> como encontramos no <em>Hexo</em>. Mas isso não é um impedimento, muito pelo contrário. É um estímulo para contribuir com o projeto. Não acham? (Veja <a href="https://github.com/JSRocksHQ/harmonic/blob/master/CONTRIBUTING.md" target="_blank" rel="external">aqui</a> como contribuir)</p>
+<h2 id="A-Resolucao"><a href="#A-Resolucao" class="headerlink" title="A Resolução"></a>A Resolução</h2><p>Enquanto não temos essa <em>feature</em> no <em>CLI</em> do Harmonic, podemos contornar esse nosso “problema” com uma ferramenta muito útil para o <em>front-end</em>.<br>E é aqui que entra o <a href="http://gulpjs.com/" target="_blank" rel="external">Gulp</a>. Um automatizador de tarefas para <em>front-end</em> que da conta de várias tarefas repetitivas no <em>workflow</em>.</p>
+<p>Nesse caso, ele vai nos ajudar a fazer o <em>deploy</em> dos estáticos do blog para o <a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a>.</p>
+<p>Temos que seguir alguns passos antes de ter condições para fazer o <em>deploy</em>, vamos lá?</p>
+<ol>
+<li>Instalar o <em>Gulp</em> globalmente com o camando: <code>npm install --global gulp</code></li>
+<li>Instalar o <em>Gulp</em> como <em>devDependencies</em> do seu projeto: <code>npm install --save-dev gulp</code></li>
+<li>Instalar o <em>gulp-gh-pages</em> que é o <code>plugin</code> que fará o deploy: <code>npm install --save-dev gulp-gh-pages</code></li>
+<li>Criar na raiz do seu projeto um <em>gulpfile.js</em></li>
+</ol>
+<p>Depois de seguir esses passos, já temos condições de criar a <em>task</em> que irá realizar o deploy.</p>
+<p>Nosso <code>Gulpfile</code> parcial ficará assim então:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"><span class="keyword">var</span> ghPages = <span class="built_in">require</span>(<span class="string">'gulp-gh-pages'</span>);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'deploy'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'./dist/**/*'</span>)</span><br><span class="line">    .pipe(ghPages());</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>Depois de fazer os <code>requires</code> do <code>gulp</code> e do <code>gulp-gh-pages</code>, começamos a escrever a <em>task</em>. Como primeiro parâmetro passamos o nome da <em>task</em>, <code>deploy</code>, e como segundo, uma função anônima. Nela está descrito o diretório onde queremos que os arquivos sejam pegos, no caso <code>./dist/**/*</code>. Este comando irá, recursivamente, pegar todas as pastas e arquivos, para depois, com a função <code>ghPages()</code> realizar o deploy de fato.</p>
+<p>Aqui temos algumas opções. Vamos inserir um objeto na função <code>ghPages()</code> com duas propriedades, <code>remoteUrl</code> e <code>branch</code>. A primeira irá dizer ao <code>plugin</code> para qual repositório queremos enviar os arquivos selecionados e a segunda escolheremos qual <code>branch</code> queremos que ele ocupe no <code>github</code>, no caso, a <code>master</code>. Mas você pode conferir mais opções para o <em>deploy</em> na página do  <a href="https://github.com/shinnn/gulp-gh-pages" target="_blank" rel="external">projeto gulp-gh-pages</a> no Github.</p>
+<p>Bem, o resultado final do nosso <code>gulpfile</code> até aqui é o seguinte:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"><span class="keyword">var</span> ghPages = <span class="built_in">require</span>(<span class="string">'gulp-gh-pages'</span>);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'deploy'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'./dist/**/*'</span>)</span><br><span class="line">    .pipe(ghPages(&#123;</span><br><span class="line">      remoteUrl: <span class="string">'https://github.com/youruser/youruser.github.io.git'</span>,</span><br><span class="line">      branch: <span class="string">'master'</span></span><br><span class="line">    &#125;));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>Com tudo <em>ok</em>, é só irmos para o terminal, rodar a <em>task</em> assim: <code>gulp deploy</code>, nós autenticarmos no github e pronto. Nossos arquivos estáticos estarão atualizados no <em>Github Pages</em>.</p>
+<h2 id="Conclusao"><a href="#Conclusao" class="headerlink" title="Conclusão"></a>Conclusão</h2><p>Vimos como é simples usar o <em>Gulp</em> para fazer <code>deploy</code> no <code>Github Pages</code>. Suas funcionalidades para o <code>front-end</code> são inúmeras e não param de crescer. Recomendo fortemente que você separe um tempo para conhecer mais a fundo o <strong>Gulp</strong>.</p>
+<p>É isso. Espero que com esse passo a passo, consigamos resolver esse “problema” do <code>deploy</code> no <code>Harmonic</code>.</p>
+<p>Um abraço e até a próxima.</p>
+
+    </section>
+    <hr>
+    <footer class="columns post-footer">
+      <section class="column is-8 author">
+  <article class="media">
+    <div class="media-left">
+      <figure class="image is-64x64">
+        <img src="https://www.gravatar.com/avatar/1c03605f8969ad1bebd505958b420c45" alt="Gravatar - Adams Alves">
+      </figure>
+    </div>
+    <div class="media-content">
+      <strong>Adams Alves</strong>
+      <p>Desenvolvimento web, Javascript e outras coisas interessantes sobre a Web!</p>
+    </div>
+  </article>
+</section>
+
+      <section class="column share">
+    <h4>Compartilhe este post</h4>
+    <a href="http://twitter.com/share?url=http://yoursite.com/2016/03/29/Fazendo-deploy-no-Github-Pages-com-Gulp/"
+       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+       <i class="fa fa-twitter"></i>
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/03/29/Fazendo-deploy-no-Github-Pages-com-Gulp/"
+       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+       <i class="fa fa-facebook"></i>
+    </a>
+    <a href="https://plus.google.com/share?url=http://yoursite.com/2016/03/29/Fazendo-deploy-no-Github-Pages-com-Gulp/"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+       <i class="fa fa-google-plus"></i>
+    </a>
+</section>
+
+    </footer>
+  </article>
+  <hr>
+  <nav class="pagination post-pagination" role="pagination">
+    
+    <a class="newer-posts" href="/2016/05/10/Como-habilitar-o-tab-autocomplete-para-JSX-com-Emmet-no-Atom/">
+        ← Como habilitar o "tab autocomplete" para JSX com Emmet no Atom
+    </a>
+    
+    <span class="page-number">•</span>
+    
+    <a class="older-posts" href="/2015/04/05/Conhecendo-a-Developer-Tollbar-Barra-do-desenvolvedor-do-Firefox/">
+        Conheçendo a Developer Toolbar(Barra do desenvolvedor) do Firefox →
+    </a>
+    
+</nav>
+
+  <div id="comment" class="comments-area">
+    <h1 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h1>
+
+    
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    
+</div>
+
+</main>
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="content">
+      <p>
+        Adams Alves 2016  -
+        Published with <a href="http://hexo.io/" target="_blank">Hexo</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script src="/lib/js/main.js"></script>
+
+<script type="text/javascript">
+    var disqus_shortname = 'adamsalves';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+</body>
+</html>

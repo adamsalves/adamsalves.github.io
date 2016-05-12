@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <title>Como habilitar o &quot;tab autocomplete&quot; para JSX com Emmet no Atom |  Adams Alves | Web Development, Front-End, Javascript and Open Web</title>
+  <meta name="description" content="Web Development, Front-End, Javascript and Open Web">
+   <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/lib/css/bulma.css">
+  <link rel="stylesheet" href="/lib/css/font-awesome.css">
+  <link rel="stylesheet" href="/lib/css/style.css">
+</head>
+
+<body>
+  <div class="hero header-theme-flow is-primary is-medium">
+  <!-- Hero header: will stick at the top -->
+  <div class="hero-header">
+    <header class="header">
+      <div class="container">
+        <div class="header-left">
+          <a class="header-item" href="/">
+            Adams Alves
+          </a>
+        </div>
+        <span class="header-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <div class="header-right header-menu">
+            
+              <span class="header-item">
+                <a href="/">Home</a>
+              </span>
+            
+              <span class="header-item">
+                <a href="/about">About</a>
+              </span>
+            
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-content">
+    <div class="container">
+       <div class="post-header">
+  <div class="meta">
+    <time datetime="2016-05-10T19:00:07.000Z" itemprop="datePublished">
+      10-05-2016
+    </time>
+    
+      
+      | 
+      <a href='/tags/Atom/'>Atom</a>,
+      
+      <a href='/tags/Emmet/'>Emmet</a>,
+      
+      <a href='/tags/JSX/'>JSX</a>,
+      
+      <a href='/tags/React/'>React</a>
+      
+    
+  </div>
+    <h1 class="title">
+      Como habilitar o "tab autocomplete" para JSX com Emmet no Atom
+    </h1>
+    
+      <h2 class="subtitle">
+        Codificando arquivos JSX com mais agilidade
+      </h2>
+    
+</div>
+
+      
+    </div>
+  </div>
+</div>
+
+  
+<main class="container main-content" role="main">
+  <article class="post">
+    <section class="post-content">
+      <p><img src="/images/atomemmet.jpg" alt="atom_emmet"><br>Todos nós programadores, preocupados com agilidade, temos, em nossos editores de texto/código, uma série de <em>snippets</em>, <em>plugins</em> ou <em>packages</em> que que nos auxiliam na codificação e facilitam nosso dia a dia. Um exemplo disso é o <a href="http://emmet.io/" target="_blank" rel="external">Emmet</a>.<a id="more"></a> Se você não conhece essa ferramenta, dá uma conferida nesse <a href="http://tableless.com.br/bye-zen-coding-bem-vindo-emmet/" target="_blank" rel="external">artigo</a> que vai te dar um panorama da utilidade do <em><strong>Emmet</strong></em>. A questão é que ele melhora e muito o fluxo de trabalho de quem está escrevendo <em>html</em> ou <em>css</em>.<br>Dá uma olhada nesse exemplo simples de como ele funciona.<br><img src="/images/atom-emmet.gif" alt="emmet"></p>
+<h3 id="Tab-do-Emmet-com-JSX"><a href="#Tab-do-Emmet-com-JSX" class="headerlink" title="Tab do Emmet com JSX"></a>Tab do Emmet com JSX</h3><p>Tá mais e aí? O <em>Emmet</em> é uma mão na roda. Já sabemos.<br>O que acontece é que, codando em JSX para construir componentes <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a>, por exemplo, o costumeiro <em>tab</em> do <em>Emmet</em> não funciona! Vocês certamente já se depararam com essa situação. E é muito frustante não ter aquela agilidade de antes, já que no <em>JSX</em> também escrevemos <em>tags</em> <em>html</em> e temos que fazer isso <em>na unha</em>.<br>E é aí que vem uma dica sensacional para nós desenvolvedores. Conseguimos habilitar o mesmo comportamento do <em>html</em> normal para <em>JSX</em>.<br>Para conseguimos isso, já temos que ter instalados os seguintes <em>packages</em>: <code>emmet</code> e o <code>language-babel</code><br>Após verificar esses requisitos é só seguir os seguintes passos:</p>
+<ol>
+<li>Abrir o arquivo <code>keymap.cson</code> clicando em <code>edit -&gt; Keymap…</code> no menu</li>
+<li>Adicionar este código ao <code>keymap</code>:</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'atom-text-editor[data-grammar~="jsx"]:not([mini])'</span>:</span><br><span class="line">  <span class="string">'tab'</span>: <span class="string">'emmet:expand-abbreviation-with-tab'</span></span><br></pre></td></tr></table></figure>
+<p>E aí está!<br><img src="/images/emmet-jsx.gif" alt="Emmet-JSX"><br>Se caso você use <em><strong>aspas simples</strong></em> para escrever os atributos, temos uma <em>config</em> para isso também!<br>É só criar o arquivo <code>syntaxProfiles.json</code> na pasta <code>~/emmet</code> e usar o seguinte código:</p>
+<pre><code class="json">{
+  <span class="attr">"html"</span>: {
+    <span class="attr">"tag_case"</span>: <span class="string">"lower"</span>,
+    <span class="attr">"attr_quotes"</span>: <span class="string">"single"</span>,
+    <span class="attr">"self_closing_tag"</span>: <span class="literal">true</span>
+  },
+  <span class="attr">"jsx"</span>: {
+    <span class="attr">"tag_case"</span>: <span class="string">"lower"</span>,
+    <span class="attr">"attr_quotes"</span>: <span class="string">"single"</span>,
+    <span class="attr">"self_closing_tag"</span>: <span class="literal">true</span>
+  }
+}
+</code></pre>
+<p>É isso, espero que ajude no desenvolvimento de vocês.<br>Um abraço.</p>
+<blockquote>
+<p>PS: Esse post foi escrito com base nesse <a href="https://gist.github.com/mxstbr/361ddb22057f0a01762240be209321f0" target="_blank" rel="external">Gist</a> (em Inglês)</p>
+</blockquote>
+
+    </section>
+    <hr>
+    <footer class="columns post-footer">
+      <section class="column is-8 author">
+  <article class="media">
+    <div class="media-left">
+      <figure class="image is-64x64">
+        <img src="https://www.gravatar.com/avatar/1c03605f8969ad1bebd505958b420c45" alt="Gravatar - Adams Alves">
+      </figure>
+    </div>
+    <div class="media-content">
+      <strong>Adams Alves</strong>
+      <p>Desenvolvimento web, Javascript e outras coisas interessantes sobre a Web!</p>
+    </div>
+  </article>
+</section>
+
+      <section class="column share">
+    <h4>Compartilhe este post</h4>
+    <a href="http://twitter.com/share?url=http://yoursite.com/2016/05/10/Como-habilitar-o-tab-autocomplete-para-JSX-com-Emmet-no-Atom/"
+       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+       <i class="fa fa-twitter"></i>
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/05/10/Como-habilitar-o-tab-autocomplete-para-JSX-com-Emmet-no-Atom/"
+       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+       <i class="fa fa-facebook"></i>
+    </a>
+    <a href="https://plus.google.com/share?url=http://yoursite.com/2016/05/10/Como-habilitar-o-tab-autocomplete-para-JSX-com-Emmet-no-Atom/"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+       <i class="fa fa-google-plus"></i>
+    </a>
+</section>
+
+    </footer>
+  </article>
+  <hr>
+  <nav class="pagination post-pagination" role="pagination">
+    
+    <span class="page-number">•</span>
+    
+    <a class="older-posts" href="/2016/03/29/Fazendo-deploy-no-Github-Pages-com-Gulp/">
+        Fazendo deploy no Github Pages com Gulp →
+    </a>
+    
+</nav>
+
+  <div id="comment" class="comments-area">
+    <h1 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h1>
+
+    
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    
+</div>
+
+</main>
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="content">
+      <p>
+        Adams Alves 2016  -
+        Published with <a href="http://hexo.io/" target="_blank">Hexo</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script src="/lib/js/main.js"></script>
+
+<script type="text/javascript">
+    var disqus_shortname = 'adamsalves';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+</body>
+</html>

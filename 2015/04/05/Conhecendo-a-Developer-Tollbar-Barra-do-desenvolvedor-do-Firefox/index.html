@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <title>Conheçendo a Developer Toolbar(Barra do desenvolvedor) do Firefox |  Adams Alves | Web Development, Front-End, Javascript and Open Web</title>
+  <meta name="description" content="Web Development, Front-End, Javascript and Open Web">
+   <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/lib/css/bulma.css">
+  <link rel="stylesheet" href="/lib/css/font-awesome.css">
+  <link rel="stylesheet" href="/lib/css/style.css">
+</head>
+
+<body>
+  <div class="hero header-theme-flow is-primary is-medium">
+  <!-- Hero header: will stick at the top -->
+  <div class="hero-header">
+    <header class="header">
+      <div class="container">
+        <div class="header-left">
+          <a class="header-item" href="/">
+            Adams Alves
+          </a>
+        </div>
+        <span class="header-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <div class="header-right header-menu">
+            
+              <span class="header-item">
+                <a href="/">Home</a>
+              </span>
+            
+              <span class="header-item">
+                <a href="/about">About</a>
+              </span>
+            
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-content">
+    <div class="container">
+       <div class="post-header">
+  <div class="meta">
+    <time datetime="2015-04-06T01:15:48.000Z" itemprop="datePublished">
+      05-04-2015
+    </time>
+    
+      
+      | 
+      <a href='/tags/tools/'>tools</a>,
+      
+      <a href='/tags/firefox/'>firefox</a>,
+      
+      <a href='/tags/webdevelopment/'>webdevelopment</a>
+      
+    
+  </div>
+    <h1 class="title">
+      Conheçendo a Developer Toolbar(Barra do desenvolvedor) do Firefox
+    </h1>
+    
+</div>
+
+      
+    </div>
+  </div>
+</div>
+
+  
+<main class="container main-content" role="main">
+  <article class="post">
+    <section class="post-content">
+      <p><img src="/images/mozillafire.png" alt="mozilla"><br>Muitas vezes necessitamos realizar ações ou executar tarefas em nossos web browser e acabamos usando complementos ou extensões que, apesar de resolverem as coisas de uma maneira objetiva, oneram a memória de nossas máquinas, já que precisam ser instaladas nos <em>browsers</em>.<a id="more"></a></p>
+<p>Vamos pensar.</p>
+<p>Temos a comodidade de instalar algo que vai realizar a tarefa que precisamos automaticamente. Isso é bom, porém, temos outros caminhos para conseguir esses resultados.  </p>
+<p>É o que vai ser tratado aqui nesse artigo: <strong>Como utilizar recursos de nossos navegadores sem ter que instalar complementos</strong>, e, de quebra, livrar nosso browser de consumir mais memória.</p>
+<p>Em se tratando de navegadores modernos, temos uma gama de <em>complementos</em>(<em>addons</em>) que possívelmente vão nos atender satisfatoriamente. E eles realmente dão conta de várias dessas necessidades e são realmente úteis. Muitos deles são extensões à serviços incríveis como o <a href="https://getpocket.com/" target="_blank" rel="external"><em>Pocket</em></a> por exemplo!</p>
+<p>Porém, muitas <em>features</em> que são tranformadas em <a href="https://addons.mozilla.org/pt-BR/firefox/" target="_blank" rel="external"><strong>addons</strong></a>, podemos conseguir usando <strong>recursos nativos</strong> do próprio navegador, sem que precisemos instalar qualquer coisa.</p>
+<p>É aí que entra a <strong>Barra do Desenvolvedor</strong>(<em>Developer tollbar</em>) do <strong>Firefox</strong>.</p>
+<p>Leia a descrição do próprio site da <a href="https://developer.mozilla.org/pt-BR/docs/Tools/GCLI" target="_blank" rel="external"><em>Developer Tollbar</em></a></p>
+<blockquote><p>The Developer Toolbar gives you command-line access to a number of developer tools from within Firefox. The Developer Toolbar is a <a href="https://github.com/joewalker/gcli/" target="_blank" rel="external">Graphical Command Line Interpreter</a>: it has the power and conciseness of a command line, but provides integrated help for its commands and can display rich output. It’s also extensible: you can add your own local commands and even convert them to add-ons so other people can install them too.</p>
+</blockquote>
+<p>Vamos então listar aqui alguns comandos que podem nos trazer resultados interessantes através do <em>command line</em> da <em>barra do desenvolvedor</em>.</p>
+<p>Primeiro vamos abrí-la:<br>Vá em Ferramentas &gt; Desenvolvedor Web &gt; Barra do desenvolvedor ou tecle <code>shift+F2</code>.</p>
+<p>Digite <code>help</code>, dê <em>enter</em> e serão listados os comando que temos à disposição no <strong>GCLI</strong>(Graphical Command Line Interpreter).<br>Ao digitarmos <code>help</code> teremos <code>[search]</code> como um parâmetro de busca. Podemos buscar algum comando já de cara, se quisermos. Mas vamos comentar alguns…</p>
+<p><strong>Comandos:</strong></p>
+<p><code>console</code> Comandos para controlar o console. Dê <em>enter</em> e verá as opções para este comando. (<code>clear</code>, <code>close</code>, <code>open</code>).</p>
+<hr>
+<p><code>export</code> Exporta o html da página</p>
+<hr>
+<p><code>eyedropper</code> Abre um painel que amplia uma área da página para inspecionar pixels e copiar valores de cores</p>
+<hr>
+<p><code>folder</code> Abre pastas, aceita como parâmetro um caminho para alguma pasta ex: folder open [path]</p>
+<hr>
+<p><code>highlight</code> Realça nós.<br>Parâmentros [–hideguides] [–showinfobar] [–showall] [–region …] [–fill …] [–keep]</p>
+<p>Realça os nós que correspondem a um seletor na página</p>
+<p>Opções:</p>
+<pre><code>&lt;selector&gt; (nodelist, obrigatório)
+Seletor CSS usado para selecionar nós na página
+[--hideguides] (boolean, obrigatório) Oculta guias ao redor do nó realçado
+[--showinfobar] (boolean, obrigatório) Exibe a barra de propriedades acima do nó realçado (a barra exibe o nome da tag, atributos e dimensões)
+[--showall] (boolean, obrigatório) Se houver muitos nós que correspondam ao seletor, apenas as primeiras 100 ocorrências serão mostradas para evitar que a página fique muito lenta. Use esta opção para exibir todas as correspondências
+[--region ...] (selection, helpManOptional) Que região da caixa deve ser realçada: “content”, “padding”, “border” ou “margin”
+[--fill ...] (string, helpManOptional) Substitui o estilo de preenchimento de região padrão por uma cor personalizada
+[--keep] (boolean, obrigatório) Por padrão, realçamentos existentes são ocultos ao executar o comando, a menos que esta opção esteja definida
+</code></pre><hr>
+<p><code>inspect</code> Inspeciona um nó</p>
+<p>Examina as dimensões e propriedades de um elemento usando um seletor CSS para abrir a inspeção do DOM</p>
+<p>Opções:</p>
+<pre><code>&lt;selector&gt; (node, obrigatório)
+Um seletor CSS para uso com document.querySelector que identifica um elemento em particular
+</code></pre><hr>
+<p><code>pagemod</code> Efetua alterações na página</p>
+<p>Subcomandos:</p>
+<pre><code>pagemod remove: Exclui elementos e atributos da página help pagemod remove
+pagemod remove attribute: Exclui os atributos encontrados help pagemod remove attribute
+pagemod remove element: Exclui elementos da página help pagemod remove element
+pagemod replace: Localiza e substitui em elementos da página help pagemod replace
+</code></pre><hr>
+<p><code>paintflashing</code> Realça regiões atualizadas</p>
+<p>Subcomandos:</p>
+<pre><code>paintflashing off: Desativa o realce de regiões atualizadas help paintflashing off
+paintflashing on: Ativa o realce de regiões atualizadas help paintflashing on
+</code></pre><hr>
+<p><code>resize</code> Controla o modo de design adaptável</p>
+<p>Subcomandos:</p>
+<pre><code>resize off: Sai do modo de design adaptável help resize off
+resize on: Entra no modo de design adaptável help resize on
+resize to: Modifica o tamanho da página help resize to
+resize toggle: Entra ou sai do modo de design adaptável help resize toggle
+</code></pre><hr>
+<p><code>restart</code> Reinicia o Firefox    </p>
+<hr>
+<p><code>screenshot</code> Salva uma imagem PNG de toda a janela visível (opcionalmente após um atraso)</p>
+<p>Opções:</p>
+<pre><code>[filename] (string, helpManOptional)
+O nome do arquivo (deve possuir a extensão “.png”) no qual será salva a imagem da página.
+[--clipboard] (boolean, obrigatório)
+True se você deseja copiar a imagem da página em vez de salvá-la em um arquivo.
+[--chrome] (boolean, obrigatório)
+True se você deseja que a imagem seja da janela do Firefox em vez do conteúdo da página.
+[--delay ...] (number, helpManOptional)
+O tempo a aguardar (em segundos) antes que imagem da página seja efetuada
+[--fullpage] (boolean, obrigatório)
+“true” se a imagem da página deve incluir as partes fora dos limites da janela
+[--selector ...] (node, helpManOptional)
+Um seletor CSS para uso com document.querySelector que identifica um elemento em particular
+</code></pre><hr>
+<p><code>unhighlight</code> Desrealça todos os nós anteriormente realçados com o comando <code>highlight</code></p>
+<p>Essas são só algumas dicas de tarefas que podemos realizar no dia a dia. A <em>barra do desenvolvedor</em> tem muitos outros comando que não foram explorados aqui.</p>
+<p>Num próximo post podemos falar de mais comandos e abordar algo realmente incrível: <strong>como criar nossos próprios comandos</strong> :D<br>Mas fica pra uma próxima!</p>
+<p>Até mais!</p>
+<p>Abraços</p>
+
+    </section>
+    <hr>
+    <footer class="columns post-footer">
+      <section class="column is-8 author">
+  <article class="media">
+    <div class="media-left">
+      <figure class="image is-64x64">
+        <img src="https://www.gravatar.com/avatar/1c03605f8969ad1bebd505958b420c45" alt="Gravatar - Adams Alves">
+      </figure>
+    </div>
+    <div class="media-content">
+      <strong>Adams Alves</strong>
+      <p>Desenvolvimento web, Javascript e outras coisas interessantes sobre a Web!</p>
+    </div>
+  </article>
+</section>
+
+      <section class="column share">
+    <h4>Compartilhe este post</h4>
+    <a href="http://twitter.com/share?url=http://yoursite.com/2015/04/05/Conhecendo-a-Developer-Tollbar-Barra-do-desenvolvedor-do-Firefox/"
+       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+       <i class="fa fa-twitter"></i>
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2015/04/05/Conhecendo-a-Developer-Tollbar-Barra-do-desenvolvedor-do-Firefox/"
+       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+       <i class="fa fa-facebook"></i>
+    </a>
+    <a href="https://plus.google.com/share?url=http://yoursite.com/2015/04/05/Conhecendo-a-Developer-Tollbar-Barra-do-desenvolvedor-do-Firefox/"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+       <i class="fa fa-google-plus"></i>
+    </a>
+</section>
+
+    </footer>
+  </article>
+  <hr>
+  <nav class="pagination post-pagination" role="pagination">
+    
+    <a class="newer-posts" href="/2016/03/29/Fazendo-deploy-no-Github-Pages-com-Gulp/">
+        ← Fazendo deploy no Github Pages com Gulp
+    </a>
+    
+    <span class="page-number">•</span>
+    
+    <a class="older-posts" href="/2015/02/19/Sobre-a-finalidade-deste-blog/">
+        Sobre a finalidade deste blog →
+    </a>
+    
+</nav>
+
+  <div id="comment" class="comments-area">
+    <h1 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h1>
+
+    
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    
+</div>
+
+</main>
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="content">
+      <p>
+        Adams Alves 2016  -
+        Published with <a href="http://hexo.io/" target="_blank">Hexo</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script src="/lib/js/main.js"></script>
+
+<script type="text/javascript">
+    var disqus_shortname = 'adamsalves';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+</body>
+</html>
