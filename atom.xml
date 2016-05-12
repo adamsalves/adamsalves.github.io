@@ -71,12 +71,12 @@
     <link href="http://adamsalves.github.io/2016/03/29/Fazendo-deploy-no-Github-Pages-com-Gulp/"/>
     <id>http://adamsalves.github.io/2016/03/29/Fazendo-deploy-no-Github-Pages-com-Gulp/</id>
     <published>2016-03-29T22:53:45.000Z</published>
-    <updated>2016-04-09T19:19:48.526Z</updated>
+    <updated>2016-05-12T02:27:13.998Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;/images/gulp.jpg&quot; alt=&quot;gulp&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Recentemente mudei a plataforma que usava para publicar os &lt;strong&gt;posts&lt;/strong&gt; do blog. Começei a publicar usando o &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;, que é uma ferramenta incrível&lt;br&gt;para gerar arquivos estáticos para o seu blog ou para a página do seu projeto&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;, como bem descrito nesse &lt;a href=&quot;http://blog.da2k.com.br/2014/01/05/hexo-criando-um-blog-ao-estilo-miojo/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;post&lt;/a&gt; do &lt;a href=&quot;http://da2k.com.br/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Fernando Daciuk&lt;/a&gt;.&lt;br&gt;Porém, no meio do caminho, conheci o &lt;a href=&quot;http://harmonicjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Harmonic&lt;/a&gt; que é um projeto feito por desenvolvedores da comunidade &lt;strong&gt;JS&lt;/strong&gt; brasileira e que está sendo escrito, já com as mais novas implementações da &lt;strong&gt;Javascript(ES2015/ES6 - ES2016/ES7)&lt;/strong&gt;. Isso me chamou a atenção. Vi a oportunidade de, além de publicar, aprender mais sobre o desenvolvimento de uma ferramenta dessas e também possibilidade de construir temas para o &lt;strong&gt;Harmonic&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Pois bem, eis que surgem as demandas.&lt;/p&gt;
-&lt;p&gt;Começei a construir meu próprio tema, o &lt;a href=&quot;https://github.com/adamsalves/harmonic-theme-profile&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;harmonic-theme-profile&lt;/a&gt;, e aprendi muito com essa iniciativa. Mas surgiram alguns contratempos referentes ao &lt;em&gt;workflow&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;Começei a construir meu próprio tema, o &lt;a href=&quot;https://github.com/adamsalves/harmonic-theme-profile&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;harmonic-theme-profile&lt;/a&gt;&lt;/del&gt;, e aprendi muito com essa iniciativa. Mas surgiram alguns contratempos referentes ao &lt;em&gt;workflow&lt;/em&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;O-“Problema”&quot;&gt;&lt;a href=&quot;#O-“Problema”&quot; class=&quot;headerlink&quot; title=&quot;O “Problema”&quot;&gt;&lt;/a&gt;O “Problema”&lt;/h2&gt;&lt;p&gt;No &lt;em&gt;Harmonic&lt;/em&gt; não temos a opção de fazer o deploy diretamente do &lt;code&gt;CLI&lt;/code&gt; como encontramos no &lt;em&gt;Hexo&lt;/em&gt;. Mas isso não é um impedimento, muito pelo contrário. É um estímulo para contribuir com o projeto. Não acham? (Veja &lt;a href=&quot;https://github.com/JSRocksHQ/harmonic/blob/master/CONTRIBUTING.md&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;aqui&lt;/a&gt; como contribuir)&lt;/p&gt;
 &lt;h2 id=&quot;A-Resolucao&quot;&gt;&lt;a href=&quot;#A-Resolucao&quot; class=&quot;headerlink&quot; title=&quot;A Resolução&quot;&gt;&lt;/a&gt;A Resolução&lt;/h2&gt;&lt;p&gt;Enquanto não temos essa &lt;em&gt;feature&lt;/em&gt; no &lt;em&gt;CLI&lt;/em&gt; do Harmonic, podemos contornar esse nosso “problema” com uma ferramenta muito útil para o &lt;em&gt;front-end&lt;/em&gt;.&lt;br&gt;E é aqui que entra o &lt;a href=&quot;http://gulpjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Gulp&lt;/a&gt;. Um automatizador de tarefas para &lt;em&gt;front-end&lt;/em&gt; que da conta de várias tarefas repetitivas no &lt;em&gt;workflow&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Nesse caso, ele vai nos ajudar a fazer o &lt;em&gt;deploy&lt;/em&gt; dos estáticos do blog para o &lt;a href=&quot;https://pages.github.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github Pages&lt;/a&gt;.&lt;/p&gt;
@@ -98,6 +98,9 @@
 &lt;h2 id=&quot;Conclusao&quot;&gt;&lt;a href=&quot;#Conclusao&quot; class=&quot;headerlink&quot; title=&quot;Conclusão&quot;&gt;&lt;/a&gt;Conclusão&lt;/h2&gt;&lt;p&gt;Vimos como é simples usar o &lt;em&gt;Gulp&lt;/em&gt; para fazer &lt;code&gt;deploy&lt;/code&gt; no &lt;code&gt;Github Pages&lt;/code&gt;. Suas funcionalidades para o &lt;code&gt;front-end&lt;/code&gt; são inúmeras e não param de crescer. Recomendo fortemente que você separe um tempo para conhecer mais a fundo o &lt;strong&gt;Gulp&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;É isso. Espero que com esse passo a passo, consigamos resolver esse “problema” do &lt;code&gt;deploy&lt;/code&gt; no &lt;code&gt;Harmonic&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Um abraço e até a próxima.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;UPDATE: Voltei a publicar com Hexo e o tema do Harmonic não está mais sendo desenvolvido, mas acredito que o post ainda é útil.&lt;/p&gt;
+&lt;/blockquote&gt;
 </content>
     
     <summary type="html">
@@ -110,11 +113,11 @@
     
       <category term="tools" scheme="http://adamsalves.github.io/tags/tools/"/>
     
+      <category term="blog" scheme="http://adamsalves.github.io/tags/blog/"/>
+    
       <category term="deploy" scheme="http://adamsalves.github.io/tags/deploy/"/>
     
       <category term="gulp" scheme="http://adamsalves.github.io/tags/gulp/"/>
-    
-      <category term="blog" scheme="http://adamsalves.github.io/tags/blog/"/>
     
   </entry>
   
@@ -244,9 +247,9 @@ Um seletor CSS para uso com document.querySelector que identifica um elemento em
     </summary>
     
     
-      <category term="blog" scheme="http://adamsalves.github.io/tags/blog/"/>
-    
       <category term="web" scheme="http://adamsalves.github.io/tags/web/"/>
+    
+      <category term="blog" scheme="http://adamsalves.github.io/tags/blog/"/>
     
       <category term="soudev" scheme="http://adamsalves.github.io/tags/soudev/"/>
     
