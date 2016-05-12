@@ -4,9 +4,9 @@
   <subtitle>Web Development, Front-End, Javascript and Open Web</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://adamsalves.github.io/"/>
   <updated>2016-05-11T18:49:33.325Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://adamsalves.github.io/</id>
   
   <author>
     <name>Adams Alves</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Como habilitar o &quot;tab autocomplete&quot; para JSX com Emmet no Atom</title>
-    <link href="http://yoursite.com/2016/05/10/Como-habilitar-o-tab-autocomplete-para-JSX-com-Emmet-no-Atom/"/>
-    <id>http://yoursite.com/2016/05/10/Como-habilitar-o-tab-autocomplete-para-JSX-com-Emmet-no-Atom/</id>
+    <link href="http://adamsalves.github.io/2016/05/10/Como-habilitar-o-tab-autocomplete-para-JSX-com-Emmet-no-Atom/"/>
+    <id>http://adamsalves.github.io/2016/05/10/Como-habilitar-o-tab-autocomplete-para-JSX-com-Emmet-no-Atom/</id>
     <published>2016-05-10T19:00:07.000Z</published>
     <updated>2016-05-11T18:49:33.325Z</updated>
     
@@ -56,20 +56,20 @@
     </summary>
     
     
-      <category term="Atom" scheme="http://yoursite.com/tags/Atom/"/>
+      <category term="Atom" scheme="http://adamsalves.github.io/tags/Atom/"/>
     
-      <category term="Emmet" scheme="http://yoursite.com/tags/Emmet/"/>
+      <category term="Emmet" scheme="http://adamsalves.github.io/tags/Emmet/"/>
     
-      <category term="JSX" scheme="http://yoursite.com/tags/JSX/"/>
+      <category term="JSX" scheme="http://adamsalves.github.io/tags/JSX/"/>
     
-      <category term="React" scheme="http://yoursite.com/tags/React/"/>
+      <category term="React" scheme="http://adamsalves.github.io/tags/React/"/>
     
   </entry>
   
   <entry>
     <title>Fazendo deploy no Github Pages com Gulp</title>
-    <link href="http://yoursite.com/2016/03/29/Fazendo-deploy-no-Github-Pages-com-Gulp/"/>
-    <id>http://yoursite.com/2016/03/29/Fazendo-deploy-no-Github-Pages-com-Gulp/</id>
+    <link href="http://adamsalves.github.io/2016/03/29/Fazendo-deploy-no-Github-Pages-com-Gulp/"/>
+    <id>http://adamsalves.github.io/2016/03/29/Fazendo-deploy-no-Github-Pages-com-Gulp/</id>
     <published>2016-03-29T22:53:45.000Z</published>
     <updated>2016-04-09T19:19:48.526Z</updated>
     
@@ -108,20 +108,20 @@
     </summary>
     
     
-      <category term="tools" scheme="http://yoursite.com/tags/tools/"/>
+      <category term="tools" scheme="http://adamsalves.github.io/tags/tools/"/>
     
-      <category term="deploy" scheme="http://yoursite.com/tags/deploy/"/>
+      <category term="deploy" scheme="http://adamsalves.github.io/tags/deploy/"/>
     
-      <category term="gulp" scheme="http://yoursite.com/tags/gulp/"/>
+      <category term="gulp" scheme="http://adamsalves.github.io/tags/gulp/"/>
     
-      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
+      <category term="blog" scheme="http://adamsalves.github.io/tags/blog/"/>
     
   </entry>
   
   <entry>
     <title>Conheçendo a Developer Toolbar(Barra do desenvolvedor) do Firefox</title>
-    <link href="http://yoursite.com/2015/04/05/Conhecendo-a-Developer-Tollbar-Barra-do-desenvolvedor-do-Firefox/"/>
-    <id>http://yoursite.com/2015/04/05/Conhecendo-a-Developer-Tollbar-Barra-do-desenvolvedor-do-Firefox/</id>
+    <link href="http://adamsalves.github.io/2015/04/05/Conhecendo-a-Developer-Tollbar-Barra-do-desenvolvedor-do-Firefox/"/>
+    <id>http://adamsalves.github.io/2015/04/05/Conhecendo-a-Developer-Tollbar-Barra-do-desenvolvedor-do-Firefox/</id>
     <published>2015-04-06T01:15:48.000Z</published>
     <updated>2016-04-09T19:17:31.126Z</updated>
     
@@ -215,18 +215,18 @@ Um seletor CSS para uso com document.querySelector que identifica um elemento em
     </summary>
     
     
-      <category term="tools" scheme="http://yoursite.com/tags/tools/"/>
+      <category term="tools" scheme="http://adamsalves.github.io/tags/tools/"/>
     
-      <category term="firefox" scheme="http://yoursite.com/tags/firefox/"/>
+      <category term="firefox" scheme="http://adamsalves.github.io/tags/firefox/"/>
     
-      <category term="webdevelopment" scheme="http://yoursite.com/tags/webdevelopment/"/>
+      <category term="webdevelopment" scheme="http://adamsalves.github.io/tags/webdevelopment/"/>
     
   </entry>
   
   <entry>
     <title>Sobre a finalidade deste blog</title>
-    <link href="http://yoursite.com/2015/02/19/Sobre-a-finalidade-deste-blog/"/>
-    <id>http://yoursite.com/2015/02/19/Sobre-a-finalidade-deste-blog/</id>
+    <link href="http://adamsalves.github.io/2015/02/19/Sobre-a-finalidade-deste-blog/"/>
+    <id>http://adamsalves.github.io/2015/02/19/Sobre-a-finalidade-deste-blog/</id>
     <published>2015-02-20T01:32:56.000Z</published>
     <updated>2016-04-09T19:16:44.246Z</updated>
     
@@ -244,11 +244,11 @@ Um seletor CSS para uso com document.querySelector que identifica um elemento em
     </summary>
     
     
-      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
+      <category term="blog" scheme="http://adamsalves.github.io/tags/blog/"/>
     
-      <category term="web" scheme="http://yoursite.com/tags/web/"/>
+      <category term="web" scheme="http://adamsalves.github.io/tags/web/"/>
     
-      <category term="soudev" scheme="http://yoursite.com/tags/soudev/"/>
+      <category term="soudev" scheme="http://adamsalves.github.io/tags/soudev/"/>
     
   </entry>
   
