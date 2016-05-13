@@ -108,6 +108,10 @@ h3 {
 .footer a:not(.icon):hover {
   border-bottom-color: #ed6c63;
 }
+.fa-bolt {
+  margin-top: -5px;
+  color: #FFD700;
+}
 /* BOG POSTS */
 .post-title {
   color: #444;
