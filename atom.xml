@@ -113,13 +113,13 @@
     </summary>
     
     
-      <category term="tools" scheme="http://adamsalves.github.io/tags/tools/"/>
-    
-      <category term="blog" scheme="http://adamsalves.github.io/tags/blog/"/>
-    
       <category term="deploy" scheme="http://adamsalves.github.io/tags/deploy/"/>
     
       <category term="gulp" scheme="http://adamsalves.github.io/tags/gulp/"/>
+    
+      <category term="blog" scheme="http://adamsalves.github.io/tags/blog/"/>
+    
+      <category term="tools" scheme="http://adamsalves.github.io/tags/tools/"/>
     
   </entry>
   
@@ -249,9 +249,9 @@ Um seletor CSS para uso com document.querySelector que identifica um elemento em
     </summary>
     
     
-      <category term="web" scheme="http://adamsalves.github.io/tags/web/"/>
-    
       <category term="blog" scheme="http://adamsalves.github.io/tags/blog/"/>
+    
+      <category term="web" scheme="http://adamsalves.github.io/tags/web/"/>
     
       <category term="soudev" scheme="http://adamsalves.github.io/tags/soudev/"/>
     

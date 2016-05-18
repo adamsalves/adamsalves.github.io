@@ -299,7 +299,7 @@ pre .deletion {
 }
 .post-pagination .bullet span {
   position: relative;
-  top: 35px;
+  top: 5px;
 }
 .post-pagination a {
   color: #777;
