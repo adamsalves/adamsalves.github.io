@@ -293,3 +293,23 @@ pre .deletion {
 .pagination.post-pagination {
   margin: 35px;
 }
+.post-pagination .bullet {
+  text-align: center;
+  color: #777;
+}
+.post-pagination .bullet span {
+  position: relative;
+  top: 35px;
+}
+.post-pagination a {
+  color: #777;
+}
+.post-pagination a:hover {
+  color: #ed6c63;
+  text-decoration: underline;
+}
+.post-pagination .fa-arrow-circle-o-right,
+.post-pagination .fa-arrow-circle-o-left {
+  position: relative;
+  top: 7px;
+}
