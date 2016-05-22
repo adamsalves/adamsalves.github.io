@@ -279,6 +279,18 @@ pre .deletion {
 .social a:hover {
   color: #fff;
 }
+.social.social-footer {
+  text-align: center;
+}
+.social.social-footer a {
+  color: #69707a;
+}
+.social.social-footer a:hover {
+  color: #222324;
+}
+.social.social-footer a:not(.fa) {
+  border-bottom: none;
+}
 /* PAGE */
 .title.page-title {
   margin-bottom: 10px;
