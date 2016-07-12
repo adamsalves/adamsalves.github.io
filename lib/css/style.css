@@ -8,8 +8,10 @@ a {
 a:hover {
   color: #999;
 }
+h2,
 h3 {
   font-weight: bold;
+  margin-top: 15px;
 }
 /* HEADER */
 .hero.is-primary .header .container,
