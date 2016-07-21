@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <title>Usando arquivos CSS externos em aplicações VueJS + Webpack |  Adams Alves | Web Development, Front-End, Javascript and Open Web</title>
+  <meta name="author" content="Adams Alves">
+  <meta name="description" content="Web Development, Front-End, Javascript and Open Web">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="keywords" content="javascript, html, html5, css, css3, frontend, web" />
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@adams_alves">
+  <meta name="twitter:creator" content="@adams_alves">
+  <meta name="twitter:url" content="http://adamsalves.github.io">
+  <meta name="twitter:title" content="Blog do Adams Alves">
+  <meta name="twitter:description" content="Web Development, Front-End, Javascript and Open Web">
+
+  <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/lib/css/bulma.css">
+  <link rel="stylesheet" href="/lib/css/font-awesome.css">
+  <link rel="stylesheet" href="/lib/css/style.css">
+</head>
+
+<body>
+  <div class="hero header-theme-flow is-primary is-medium">
+  <!-- Hero header: will stick at the top -->
+  <div class="hero-header">
+    <header class="header">
+      <div class="container">
+        <div class="header-left">
+          <a class="header-item" href="/">
+            Adams Alves
+          </a>
+        </div>
+        <span class="header-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <div class="header-right header-menu">
+            
+              <span class="header-item">
+                <a href="/">Home</a>
+              </span>
+            
+              <span class="header-item">
+                <a href="/about">About</a>
+              </span>
+            
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-content">
+    <div class="container">
+       <div class="post-header">
+  <div class="meta">
+    <time datetime="2016-07-21T18:41:50.000Z" itemprop="datePublished">
+      21-07-2016
+    </time>
+    
+      
+      | 
+      <a href='/tags/VueJS/'>VueJS</a>,
+      
+      <a href='/tags/Webpack/'>Webpack</a>,
+      
+      <a href='/tags/CSS/'>CSS</a>,
+      
+      <a href='/tags/Pre-Processors/'>Pre-Processors</a>,
+      
+      <a href='/tags/Stylus/'>Stylus</a>,
+      
+      <a href='/tags/SASS/'>SASS</a>,
+      
+      <a href='/tags/LESS/'>LESS</a>,
+      
+      <a href='/tags/Hot-Reload/'>Hot Reload</a>
+      
+    
+  </div>
+    <h1 class="title">
+      Usando arquivos CSS externos em aplicações VueJS + Webpack
+    </h1>
+    
+      <h2 class="subtitle">
+        Como incluir arquivos, bibliotecas ou frameworks nos nossos Vue Components
+      </h2>
+    
+</div>
+
+      
+    </div>
+  </div>
+</div>
+
+  
+<main class="container main-content" role="main">
+  <article class="post">
+    <section class="post-content">
+      <p><img src="/images/vue-format.png" alt="vue-formats"><br>No <em>post</em> anterior, mostrei <a href="/2016/07/09/Extraindo-o-CSS-de-componentes-VueJS-para-um-arquivo-separado/" title="como extrair o css de compoentes VueJS para um arquivo separado">como extrair o css de compoentes VueJS para um arquivo separado</a>. Agora, este post vai mostrar <strong>como usar arquivos CSS externos nos Vue Components</strong>.<br>Você com certeza, além de escrever boa parte do <em>CSS</em> do seu site/aplicação, usa algo externo, seja uma biblioteca ou um framework. <a id="more"></a> Vamos ver então, como incluí-los nos nossos projetos.  </p>
+<h2 id="Extract-Text-Plugin"><a href="#Extract-Text-Plugin" class="headerlink" title="Extract Text Plugin"></a>Extract Text Plugin</h2><p>Com um projeto <code>VueJS</code> rodando, (<a href="/2016/07/09/Extraindo-o-CSS-de-componentes-VueJS-para-um-arquivo-separado/" title="se você não sabe como, dá uma olhada aqui!">se você não sabe como, dá uma olhada aqui!</a>), teremos também que usar o <a href="https://github.com/webpack/extract-text-webpack-plugin" target="_blank" rel="external">Extract Text Plugin</a>, que igualmente vai extrair o conteúdo do nosso arquivo externo.<br>Vamos instalá-lo pelo <code>npm</code>:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install extract-text-webpack-plugin --save-dev</span><br></pre></td></tr></table></figure></p>
+<p>Além de utilizar o <code>vue-loader</code> e o <em>plugin</em> <code>Extract Text Plugin</code> em conjunto para extrair o <em>CSS</em> dos componentes e criar um arquivo separado com nossos estilos, vamos usar também um <code>loader module</code> que vai extrair o <em>CSS</em> de arquivos externos e concatenar com os dos nossos componentes. Como dito, eles podem vir de um arquivo, biblioteca ou framework que eventualmente você use.</p>
+<p>A configuração do <code>webpack.config.js</code> fica assim então:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ExtractTextPlugin = <span class="built_in">require</span>(<span class="string">'extract-text-webpack-plugin'</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="comment">// ... outras configurações</span></span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    loaders: [</span><br><span class="line">      <span class="comment">// ... outras configurações</span></span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">        loader: ExtractTextPlugin.extract(<span class="string">'css-loader'</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  vue: &#123;</span><br><span class="line">    loaders: &#123;</span><br><span class="line">      css: ExtractTextPlugin.extract(<span class="string">'css'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">      <span class="keyword">new</span> ExtractTextPlugin(<span class="string">'styles.css'</span>)</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Para que possamos testar isso, vamos criar um arquivo <em>CSS</em> de exemplo, <code>app.css</code>, e colocá-lo na pasta <code>src/</code>. Não esquecendo que temos que fazer o <code>import</code> desse arquivo na nossa aplicação, preferencialmente no <code>App.vue</code>, dentro da <code>tag</code> <code>&lt;script&gt;</code> :<br><img src="/images/import-app.png" alt="import-app"></p>
+<p>Com isso já estamos gerando um arquivo separado com os estilos dos componentes e com o conteúdo do nosso arquivo externo, na pasta <code>dist/</code>. Não podemos esquecer de referenciar o arquivo <em>CSS</em> gerado, <code>styles.css</code>, no <code>index.html</code> desta maneira: <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;dist/styles.css&quot;&gt;</code></p>
+<h2 id="Usando-Pre-Processors"><a href="#Usando-Pre-Processors" class="headerlink" title="Usando Pre-Processors"></a>Usando Pre-Processors</h2><p>Aqui, como no <em>post</em> anterior, também podemos utilizar pré-processsadores na escrita do nosso <em>CSS</em>.<br>Estou utilizando o <a href="https://github.com/shama/stylus-loader" target="_blank" rel="external">Stylus</a>, mas você pode facilmente encontrar os <code>loaders webpack</code> de <code>SASS</code> ou <code>LESS</code> no <a href="https://www.npmjs.com/" target="_blank" rel="external">npm</a>.<br>A instalação do <code>stylus</code> e do <code>stylus-loader</code> é a seguinte:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install stylus stylus-loader --save-dev</span><br></pre></td></tr></table></figure>
+<p>Lembrando que temos que adicionar os <code>loaders</code> do pré-processsador escolhido no <code>webpack.config.js</code>.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ExtractTextPlugin = <span class="built_in">require</span>(<span class="string">'extract-text-webpack-plugin'</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="comment">// ... outras configurações</span></span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    loaders: [</span><br><span class="line">      <span class="comment">// ... outras configurações</span></span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.styl$/</span>,</span><br><span class="line">        loader: <span class="string">'style-loader!css-loader!stylus-loader'</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  vue: &#123;</span><br><span class="line">    loaders: &#123;</span><br><span class="line">      css: ExtractTextPlugin.extract(<span class="string">'css'</span>),</span><br><span class="line">      stylus: ExtractTextPlugin.extract(<span class="string">'css!stylus'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">      <span class="keyword">new</span> ExtractTextPlugin(<span class="string">'styles.css'</span>)</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Então, no nosso componente principal, <code>App.vue</code>, é só dar um <code>@import</code>, dentro da <code>tag &lt;style&gt;</code>, do arquivo externo que queremos utilizar:</p>
+<p><img src="/images/base-stylus.png" alt="base-stylus"></p>
+<p>Lembrando de colocar também o <em>atributo</em> <code>lang</code> com a valor <code>stylus</code> na <code>tag &lt;style lang=&quot;stylus&quot;&gt;</code>.</p>
+<p>Se você quiser usar arquivos específicos em cada um dos seus componentes, é só dar o <code>@import</code> dentro de cada um deles.</p>
+<p>Podemos conferir se o arquivo de saída está gerando corretamente os estilos.<br>É só roda no terminal o comando de <code>build</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm run build</span><br></pre></td></tr></table></figure>
+<p>A partir daqui, já estamos habilitados a incluir aquela biblioteca ou <em>framework</em> que usamos no dia a dia :)</p>
+<h2 id="Dica-Hot-Reload-CSS"><a href="#Dica-Hot-Reload-CSS" class="headerlink" title="Dica - Hot Reload CSS"></a>Dica - Hot Reload CSS</h2><p>O <em>CSS</em> não está configurado para responder ao <code>hot reload</code>, que é o sistema que verifica se há uma modificação na nossa aplicação e as atualiza no <em>browser</em>. Porém, podemos contornar isso facilmente.</p>
+<p>Primeiro, criamos um arquivo <code>javascript</code>, por exemplo <code>stylus.js</code>, preferencialmente na pasta <code>src/</code> e nele fazemos o <code>import</code> do nosso arquivo <em>CSS</em> base:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import base from <span class="string">'./stylus/base.styl'</span></span><br></pre></td></tr></table></figure></p>
+<p>E no <code>webpack.config.js</code> colocamos o caminho para o arquivo na propriedade <code>entry</code> no módulo que o <code>webpack</code> está exportando:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  entry: [<span class="string">'./src/main.js'</span>, <span class="string">'./src/stylus.js'</span>]</span><br><span class="line">  ... // outras configurações</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Para testar é só rodar a aplicação e fazer alguma alteração no <em>CSS</em>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm run dev</span><br></pre></td></tr></table></figure>
+<h2 id="Conclusao"><a href="#Conclusao" class="headerlink" title="Conclusão"></a>Conclusão</h2><p>Vimos como extrair o <em>CSS</em> de arquivos externos, fazendo com que sejam incluídos, junto com os estilos dos nossos componentes <code>Vue</code>, num arquivo separado. Além disso, tivemos a dica de como adicionar o <em>CSS</em> ao <code>hot reload</code> da aplicação, que agiliza e muito na hora do desenvolvimento.<br><br>    </p>
+<p>Espero que ter ajudado.<br>Se você tiver algum <em>feedback</em> ou realiza essas tarefas de outro modo, deixa aí nos comentários. :)</p>
+<p>Um abraço.</p>
+
+    </section>
+    <hr>
+    <footer class="columns post-footer">
+      <section class="column is-8 author">
+  <article class="media">
+    <div class="media-left">
+      <figure class="image is-64x64">
+        <img src="https://www.gravatar.com/avatar/1c03605f8969ad1bebd505958b420c45" alt="Gravatar - Adams Alves">
+      </figure>
+    </div>
+    <div class="media-content">
+      <strong>Adams Alves</strong>
+      <p>Desenvolvimento web, Javascript e outras coisas interessantes sobre a Web!</p>
+    </div>
+  </article>
+</section>
+
+      <section class="column share">
+    <h4>Compartilhe este post</h4>
+    <a href="http://twitter.com/share?url=http://adamsalves.github.io/2016/07/21/Usando-arquivos-bibliotecas-ou-frameworks-CSS-externos-em-aplicacoes-VueJS-Webpack/"
+       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+       <i class="fa fa-twitter"></i>
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http://adamsalves.github.io/2016/07/21/Usando-arquivos-bibliotecas-ou-frameworks-CSS-externos-em-aplicacoes-VueJS-Webpack/"
+       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+       <i class="fa fa-facebook"></i>
+    </a>
+    <a href="https://plus.google.com/share?url=http://adamsalves.github.io/2016/07/21/Usando-arquivos-bibliotecas-ou-frameworks-CSS-externos-em-aplicacoes-VueJS-Webpack/"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+       <i class="fa fa-google-plus"></i>
+    </a>
+</section>
+
+    </footer>
+  </article>
+  <hr>
+  <nav class="columns is-multiline is-mobile post-pagination" role="pagination">
+    
+    <div class="bullet column is-one-quarter">
+      <span>•</span>
+    </div>
+    
+      <div class="column is-one-quarter">
+        <a class="older-posts" href="/2016/07/09/Extraindo-o-CSS-de-componentes-VueJS-para-um-arquivo-separado/">
+            Extraindo o CSS de componentes VueJS para um arquivo separado <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    
+</nav>
+
+  <div id="comment" class="comments-area">
+    <h1 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h1>
+
+    
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    
+</div>
+
+</main>
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="content">
+      <p>
+        Adams Alves <i class="fa fa-bolt fa-2x" aria-hidden="true"></i>
+ 2016  -
+        Published with <a href="http://hexo.io/" target="_blank">Hexo</a>
+      </p>
+    </div>
+    
+      <div  class="social social-footer" >
+  <a href="https://github.com/adamsalves"><i class="fa fa-github fa-2x"></i></a>
+  <a href="https://twitter.com/adams_alves"><i class="fa fa-twitter fa-2x"></i></a>
+  <a href="http://codepen.io/adams_alves"><i class="fa fa-codepen fa-2x"></i></a>
+  <a href="https://onename.com/adams_alves"><i class="fa fa-btc fa-2x"></i></a>
+  <a href="/atom.xml"><i class="fa fa-rss fa-2x"></i></a>
+</div>
+
+    
+  </div>
+</footer>
+
+  <script src="/lib/js/main.js"></script>
+
+<script type="text/javascript">
+    var disqus_shortname = 'adamsalves';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+</body>
+</html>
