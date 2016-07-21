@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://adamsalves.github.io/"/>
-  <updated>2016-07-21T18:41:50.150Z</updated>
+  <updated>2016-07-21T18:51:14.250Z</updated>
   <id>http://adamsalves.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://adamsalves.github.io/2016/07/21/Usando-arquivos-bibliotecas-ou-frameworks-CSS-externos-em-aplicacoes-VueJS-Webpack/"/>
     <id>http://adamsalves.github.io/2016/07/21/Usando-arquivos-bibliotecas-ou-frameworks-CSS-externos-em-aplicacoes-VueJS-Webpack/</id>
     <published>2016-07-21T18:41:50.000Z</published>
-    <updated>2016-07-21T18:41:50.150Z</updated>
+    <updated>2016-07-21T18:51:14.250Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;/images/vue-format.png&quot; alt=&quot;vue-formats&quot;&gt;&lt;br&gt;No &lt;em&gt;post&lt;/em&gt; anterior, mostrei &lt;a href=&quot;/2016/07/09/Extraindo-o-CSS-de-componentes-VueJS-para-um-arquivo-separado/&quot; title=&quot;como extrair o css de compoentes VueJS para um arquivo separado&quot;&gt;como extrair o css de compoentes VueJS para um arquivo separado&lt;/a&gt;. Agora, este post vai mostrar &lt;strong&gt;como usar arquivos CSS externos nos Vue Components&lt;/strong&gt;.&lt;br&gt;Você com certeza, além de escrever boa parte do &lt;em&gt;CSS&lt;/em&gt; do seu site/aplicação, usa algo externo, seja uma biblioteca ou um framework. &lt;a id=&quot;more&quot;&gt;&lt;/a&gt; Vamos ver então, como incluí-los nos nossos projetos.  &lt;/p&gt;
 &lt;h2 id=&quot;Extract-Text-Plugin&quot;&gt;&lt;a href=&quot;#Extract-Text-Plugin&quot; class=&quot;headerlink&quot; title=&quot;Extract Text Plugin&quot;&gt;&lt;/a&gt;Extract Text Plugin&lt;/h2&gt;&lt;p&gt;Com um projeto &lt;code&gt;VueJS&lt;/code&gt; rodando, (&lt;a href=&quot;/2016/07/09/Extraindo-o-CSS-de-componentes-VueJS-para-um-arquivo-separado/&quot; title=&quot;se você não sabe como, dá uma olhada aqui!&quot;&gt;se você não sabe como, dá uma olhada aqui!&lt;/a&gt;), teremos também que usar o &lt;a href=&quot;https://github.com/webpack/extract-text-webpack-plugin&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Extract Text Plugin&lt;/a&gt;, que igualmente vai extrair o conteúdo do nosso arquivo externo.&lt;br&gt;Vamos instalá-lo pelo &lt;code&gt;npm&lt;/code&gt;:&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm install extract-text-webpack-plugin --save-dev&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -39,7 +39,7 @@
 &lt;p&gt;Podemos conferir se o arquivo de saída está gerando corretamente os estilos.&lt;br&gt;É só roda no terminal o comando de &lt;code&gt;build&lt;/code&gt;:&lt;/p&gt;
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm run build&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;A partir daqui, já estamos habilitados a incluir aquela biblioteca ou &lt;em&gt;framework&lt;/em&gt; que usamos no dia a dia :)&lt;/p&gt;
-&lt;h2 id=&quot;Dica-Hot-Reload-CSS&quot;&gt;&lt;a href=&quot;#Dica-Hot-Reload-CSS&quot; class=&quot;headerlink&quot; title=&quot;Dica - Hot Reload CSS&quot;&gt;&lt;/a&gt;Dica - Hot Reload CSS&lt;/h2&gt;&lt;p&gt;O &lt;em&gt;CSS&lt;/em&gt; não está configurado para responder ao &lt;code&gt;hot reload&lt;/code&gt;, que é o sistema que verifica se há uma modificação na nossa aplicação e as atualiza no &lt;em&gt;browser&lt;/em&gt;. Porém, podemos contornar isso facilmente.&lt;/p&gt;
+&lt;h2 id=&quot;Dica-Hot-Reload-CSS&quot;&gt;&lt;a href=&quot;#Dica-Hot-Reload-CSS&quot; class=&quot;headerlink&quot; title=&quot;Dica - Hot Reload CSS&quot;&gt;&lt;/a&gt;Dica - Hot Reload CSS&lt;/h2&gt;&lt;p&gt;O &lt;em&gt;CSS&lt;/em&gt; não está configurado para responder ao &lt;a href=&quot;https://vue-loader.vuejs.org/en/features/hot-reload.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;hot reload&lt;/a&gt;, que é o sistema que verifica se há modificações na nossa aplicação e as atualiza no &lt;em&gt;browser&lt;/em&gt;. Porém, podemos contornar isso facilmente.&lt;/p&gt;
 &lt;p&gt;Primeiro, criamos um arquivo &lt;code&gt;javascript&lt;/code&gt;, por exemplo &lt;code&gt;stylus.js&lt;/code&gt;, preferencialmente na pasta &lt;code&gt;src/&lt;/code&gt; e nele fazemos o &lt;code&gt;import&lt;/code&gt; do nosso arquivo &lt;em&gt;CSS&lt;/em&gt; base:&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import base from &lt;span class=&quot;string&quot;&gt;&#39;./stylus/base.styl&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;E no &lt;code&gt;webpack.config.js&lt;/code&gt; colocamos o caminho para o arquivo na propriedade &lt;code&gt;entry&lt;/code&gt; no módulo que o &lt;code&gt;webpack&lt;/code&gt; está exportando:&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;module.exports = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  entry: [&lt;span class=&quot;string&quot;&gt;&#39;./src/main.js&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;./src/stylus.js&#39;&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  ... // outras configurações&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Para testar é só rodar a aplicação e fazer alguma alteração no &lt;em&gt;CSS&lt;/em&gt;:&lt;/p&gt;
@@ -233,13 +233,13 @@
     </summary>
     
     
+      <category term="tools" scheme="http://adamsalves.github.io/tags/tools/"/>
+    
       <category term="deploy" scheme="http://adamsalves.github.io/tags/deploy/"/>
     
       <category term="gulp" scheme="http://adamsalves.github.io/tags/gulp/"/>
     
       <category term="blog" scheme="http://adamsalves.github.io/tags/blog/"/>
-    
-      <category term="tools" scheme="http://adamsalves.github.io/tags/tools/"/>
     
   </entry>
   
